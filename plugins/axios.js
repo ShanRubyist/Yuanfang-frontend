@@ -24,9 +24,12 @@ export default function ({ $axios, store, redirect }) {
 
     if (response.headers.authorization != undefined) {
       let token = response.headers.authorization.replace('Bearer ', '')
-      let userid = response.data.data.id
+      let userid = response.data?.data?.id
       store.commit('set_token', token)
-      store.commit('set_userid', userid)
+      
+      if (userid) {
+        store.commit('set_userid', userid)
+      }
       // window.localStorage.setItem('token', store.state.token)
     }
 
