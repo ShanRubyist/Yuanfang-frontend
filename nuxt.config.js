@@ -41,6 +41,7 @@ export default {
   modules: [
     '@nuxtjs/axios'
   ],
+
   axios: {
     baseURL: process.env.BASE_URL,
     // proxy: true
@@ -49,11 +50,17 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   },
+
+  router: {
+    middleware: 'auth'
+  },
+
   server: {
     host: '0.0.0.0', // default: localhost,
     // port: '3000',
     timing: false
   },
+
   // ssr: false, // default is 'true'
   // target: 'static' // default is 'server'
 }
