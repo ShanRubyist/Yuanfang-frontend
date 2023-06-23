@@ -11,17 +11,21 @@
       <label>temperature:</label>
       <a-slider v-model:value="temperature" :min="0" :max="2" :step="0.1" />
 
-      <a-button @click="achieve" type="primary">元芳，你怎么看？</a-button>
+      <a-button @click="achieve" :loading="loading" type="primary">元芳，你怎么看？</a-button>
+      <a-button v-if="loading" @click="abort_request" type="text">取消</a-button>
     </div>
 
     <div class="main">
+
       <div class="showcase_container">
         <div v-for="label in this.models" class="showcase">
+
           <div class="showcase_header">{{ label }}</div>
 
           <div class="showcase_body" @click="copy(result.find(item => item.label === label)?.answer)">
             <div v-html="markdown(result.find(item => item.label === label)?.answer)"></div>
           </div>
+
         </div>
       </div>
     </div>
@@ -46,11 +50,18 @@ export default {
     result: [],
     temperature: 0.5,
     modelList: MAPPER_MODEL_LIST.map(item => item.label),
-    models: MAPPER_MODEL_LIST.filter(item => item.label != 'gpt-3.5-turbo(openai)').map(item => item.label)
+    models: MAPPER_MODEL_LIST.filter(item => item.label != 'gpt-3.5-turbo(openai)').map(item => item.label),
+    abort_controller: null,
+    loading: false
   }),
   methods: {
-    async achieve() {
+    abort_request() {
+      this.abort_controller?.abort()
+    },
+    async achieve(e) {
+      this.loading = true
       // console.log(this.models)
+      this.abort_controller = new AbortController()
 
       let mapper_model;
       for (let model of this.models) {
@@ -72,6 +83,7 @@ export default {
             "temperature": this.temperature,
             "site": site
           }),
+          signal: this.abort_controller.signal,
           // mode: 'cors'
         })
 
@@ -102,7 +114,11 @@ export default {
         }
       }
       catch (e) {
-        alert("openai 请求失败:" + e);
+        this.result.find(item => item.label === label).answer += ("\n\nOpenAI 请求:" + e)
+
+      }
+      finally {
+        this.loading = false
       }
     },
     parseSSEMessage(message) {
@@ -136,7 +152,7 @@ export default {
       if (typeof str === 'undefined') return '';
 
       const md = require('markdown-it')({
-        html: false,        // Enable HTML tags in source
+        html: false,            // Enable HTML tags in source
         xhtmlOut: false,        // Use '/' to close single tags (<br />).
         // This is only for full CommonMark compatibility.
         breaks: false,        // Convert '\n' in paragraphs into <br>
