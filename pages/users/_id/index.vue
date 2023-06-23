@@ -2,7 +2,8 @@
   <div class="container">
 
     <div class="sidebar">
-      <textarea v-model="question" class="form-control" rows="5" placeholder="请输入功能描述" autofocus></textarea>
+      <textarea v-model="question" @keyup.ctrl.enter="achieve" class="form-control" rows="5" placeholder="请输入功能描述"
+        autofocus></textarea>
 
       <label>model:</label>
       <a-checkbox-group v-model:value="models" :options="this.modelList" />
@@ -29,6 +30,8 @@
 </template>
   
 <script>
+import request from '@/utils/request'
+
 const MAPPER_MODEL_LIST = [
   { 'label': 'gpt-3.5-turbo(openai)', 'model': 'gpt-3.5-turbo', 'site': 'openai' },
   { 'label': 'gpt-3.5-turbo(api2d.net)', 'model': 'gpt-3.5-turbo', 'site': 'api2d' },
@@ -57,7 +60,7 @@ export default {
     },
     async fetch_answer(label, model, site) {
       try {
-        const response = await fetch(process.env.BASE_URL + '/api/v1/completions/achieve', {
+        const response = await request('/api/v1/completions/achieve', {
           method: 'POST',
           headers: {
             responseType: 'stream',
@@ -69,7 +72,7 @@ export default {
             "temperature": this.temperature,
             "site": site
           }),
-          // mode: 'no-cors'
+          // mode: 'cors'
         })
 
         this.result.push({ label: label, answer: '' })

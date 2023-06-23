@@ -8,7 +8,7 @@
 
     <div class="content-container">
       <div class="login-form">
-        <p class="logo-wrap">TM</p>
+        <p class="logo-wrap">Yuanfang</p>
 
         <div class="auth-content">
           <div class="form-fieldset-container">
@@ -47,6 +47,8 @@
 </template>
   
 <script>
+import request from '@/utils/request'
+
 export default {
   name: 'SigninPage',
   data: () => ({
@@ -57,9 +59,15 @@ export default {
   methods: {
     async login() {
       try {
-        const resp = await this.$axios.post('/auth/sign_in', {
-          email: this.email,
-          password: this.password
+        const resp = await request('/auth/sign_in', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            "email": this.email,
+            "password": this.password
+          })
         })
 
         this.$router.push('/users/' + this.$store.state.userid)
