@@ -1,4 +1,4 @@
-export default function markdown(str) {
+export default function markdown(str: string) {
     if (typeof str === 'undefined') return '';
 
     const md = require('markdown-it')({

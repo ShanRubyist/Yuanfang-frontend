@@ -1,4 +1,4 @@
-export default async function request(path, options = {}) {
+export default async function request(path: string, options: any = {}) {
     let url = process.env.BASE_URL + path
 
     if (!options.headers) options.headers = {}

@@ -1,4 +1,4 @@
-export function parseSSEMessage(message) {
+export function parseSSEMessage(message: string) {
     const lines = message.split('\n')
     const lineFields = []
     const lineValues = []
@@ -15,7 +15,7 @@ export function parseSSEMessage(message) {
     return { field: lineFields[0], value: lineValues.join('\n') }
 }
 
-export function parseSSELine(line) {
+export function parseSSELine(line: string) {
     const pos = line.indexOf(': ')
     if (pos === -1)
         throw new Error(`Can't find ': ' in line '${line}'`)
@@ -27,20 +27,19 @@ export function parseSSELine(line) {
     }
 }
 
-export async function copyToClipboard(text) {
+export async function copyToClipboard(text: string) {
     if (!text) return
     try {
         return await navigator.clipboard.writeText(text)
     } catch {
-        const element = document.createElement("textarea")
+        const element: HTMLTextAreaElement = document.createElement("textarea")
         const previouslyFocusedElement = document.activeElement
 
-        element.value = text
+        element.value = text;
 
         // Prevent labelboard from showing on mobile
-        element.setAttribute("readonly", "")
-
-        element.style.contain = "strict"
+        (element.setAttribute as any)("readonly", "")
+        (element.style as any).contain = "strict"
         element.style.position = "absolute"
         element.style.left = "-9999px"
         element.style.fontSize = "12pt" // Prevent zooming on iOS
@@ -67,7 +66,7 @@ export async function copyToClipboard(text) {
 
         // Get the focus back on the previously focused element, if any
         if (previouslyFocusedElement) {
-            ; (previouslyFocusedElement).focus()
+            ; (previouslyFocusedElement as HTMLElement).focus()
         }
     }
 }
