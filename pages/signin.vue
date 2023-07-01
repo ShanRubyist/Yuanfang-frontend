@@ -46,7 +46,7 @@
   </div>
 </template>
   
-<script>
+<script lang="ts">
 import request from '@/utils/request'
 
 export default {
@@ -65,14 +65,14 @@ export default {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            "email": this.email,
-            "password": this.password
+            "email": (this as any).email,
+            "password": (this as any).password
           })
-        })
+        });
 
-        this.$router.push('/users/' + this.$store.state.userid)
+        (this as any).$router.push('/users/' + (this as any).$store.state.userid)
       }
-      catch (e) {
+      catch (e: any) {
         alert("登录失败:" + e)
       }
     }

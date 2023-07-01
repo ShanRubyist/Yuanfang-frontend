@@ -33,7 +33,7 @@
   </div>
 </template>
   
-<script>
+<script lang="ts">
 import request from '@/utils/request'
 import { parseSSEMessage, copyToClipboard } from '@/utils/lib'
 import markdown from '@/utils/markdown'
@@ -58,20 +58,20 @@ export default {
   }),
   methods: {
     abort_request() {
-      this.abort_controller?.abort()
+      (this as any).abort_controller?.abort()
     },
-    async achieve(e) {
-      this.loading = true
-      // console.log(this.models)
-      this.abort_controller = new AbortController()
+    async achieve(e: any) {
+      (this as any).loading = true;
+      // console.log((this as any).models)
+      (this as any).abort_controller = new AbortController()
 
-      let mapper_model;
-      for (let model of this.models) {
+      let mapper_model: any;
+      for (let model of (this as any).models) {
         mapper_model = MAPPER_MODEL_LIST.find(item => item.label === model);
         this.fetch_answer(mapper_model.label, mapper_model.model, mapper_model.site)
       }
     },
-    async fetch_answer(label, model, site) {
+    async fetch_answer(label: any, model: any, site: any) {
       try {
         const response = await request('/api/v1/completions/achieve', {
           method: 'POST',
@@ -80,19 +80,19 @@ export default {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            "content": this.question,
+            "content": (this as any).question,
             "model": model,
-            "temperature": this.temperature,
+            "temperature": (this as any).temperature,
             "site": site
           }),
-          signal: this.abort_controller.signal,
+          signal: (this as any).abort_controller.signal,
           // mode: 'cors'
-        })
+        });
 
-        this.result.push({ label: label, answer: '' })
-        const reader = response.body?.pipeThrough(new TextDecoderStream()).getReader();
+        (this as any).result.push({ label: label, answer: '' })
+        const reader: any = response.body?.pipeThrough(new TextDecoderStream()).getReader();
 
-        let buf = []
+        let buf: any = []
         while (true) {
           const { value, done } = await reader.read();
           if (done) break;
@@ -111,21 +111,21 @@ export default {
 
             let content = JSON.parse(value)?.choices[0]?.delta?.content
             if (typeof content === 'undefined') continue;
-            this.result.find(item => item.label === label).answer += content
+            (this as any).result.find((item: any) => item.label === label).answer += content
           }
         }
       }
-      catch (e) {
-        this.result.find(item => item.label === label).answer += ("\n\nOpenAI 请求:" + e)
+      catch (e: any) {
+        (this as any).result.find((item: any) => item.label === label).answer += ("\n\nOpenAI 请求:" + e)
       }
       finally {
-        this.loading = false
+        (this as any).loading = false
       }
     },
-    md(str) {
+    md(str: string) {
       return markdown(str)
     },
-    async copy(content) {
+    async copy(content: string) {
       await copyToClipboard(content)
     }
   },
