@@ -11,6 +11,53 @@
       <label>temperature:</label>
       <a-slider v-model:value="temperature" :min="0" :max="2" :step="0.1" />
 
+      <label>prompt: <button @click="prompts_modal_visible = true">管理</button></label>
+      <p>{{ prompt?.content }}</p>
+      <a-modal v-model:visible="prompts_modal_visible" title="Prompts Library" centered :footer=null @ok="prompts_modal_visible = false">
+        <a-button type="primary" @click="add_prompt_model_visible = true">添加</a-button>
+
+        <a-modal v-model:visible="add_prompt_model_visible" title="Add Prompt" centered @ok="addPrompt">
+          <div class="form">
+            <div class="form-fieldset">
+              <div class="form-label">
+                <label>prompt</label>
+              </div>
+              <div class="form-input-container">
+                <textarea type="text" placeholder="请输入prompt" v-model="new_prompt_content" required rows="5"></textarea>
+              </div>
+            </div>
+
+            <div class="form-fieldset">
+              <div class="form-input-container">
+                <a-checkbox v-model:checked="is_prompt_default">设为默认</a-checkbox>
+              </div>
+            </div>
+          </div>
+        </a-modal>
+
+        <a-list bordered :data-source="prompts">
+          <template #renderItem="item">
+            <a-list-item v-bind:data-index="item?.id" @click="setDefaultPrompt(item?.id)">
+              <a-tag color="green" v-if="item?.default">default</a-tag>
+              <br />
+              
+              {{ item?.content }}
+
+              <button>edit</button>
+              <button>delete</button>
+            </a-list-item>
+          </template>
+
+          <!-- <template #header>
+            <div>Header</div>
+          </template>
+          
+          <template #footer>
+            <div>Footer</div>
+          </template> -->
+        </a-list>
+      </a-modal>
+
       <a-button @click="achieve" :loading="loading" type="primary">元芳，你怎么看？</a-button>
       <a-button v-if="loading" @click="abort_request" type="text">取消</a-button>
     </div>
@@ -54,9 +101,67 @@ export default {
     modelList: MAPPER_MODEL_LIST.map(item => item.label),
     models: MAPPER_MODEL_LIST.filter(item => item.label != 'gpt-3.5-turbo(openai)').map(item => item.label),
     abort_controller: null,
-    loading: false
+    loading: false,
+    prompts_modal_visible: false,
+    add_prompt_model_visible: false,
+    prompts: null,
+    prompt: null,
+    is_prompt_default: false,
+    new_prompt_content: null
   }),
   methods: {
+    async get_prompts() {
+      const resp = await request('/api/v1/prompts', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    });
+    (this as any).prompts = await resp.json()
+    },
+    async get_default_prompt(){
+      const resp = await request('/api/v1/prompts/default', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    });
+    (this as any).prompt = (await resp.json()).default_prompt
+    },
+    async addPrompt() {
+      const resp = await request('/api/v1/prompts', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          "content": (this as any).new_prompt_content,
+          "default": (this as any).is_prompt_default
+        }),
+      })
+
+      if (resp.status == 200 || resp.status == 201) {
+        (this as any).add_prompt_model_visible = false
+        this.get_prompts()
+        this.get_default_prompt()
+      }
+    },
+    async setDefaultPrompt(prompt_id: number) {
+      const resp = await request('/api/v1/prompts/default', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            "prompt_id": prompt_id,
+          }),
+      })
+
+      if (resp.status == 200 || resp.status == 201) {
+        (this as any).prompts_modal_visible = false
+        this.get_default_prompt()
+      }
+    },
     abort_request() {
       (this as any).abort_controller?.abort()
     },
@@ -83,7 +188,8 @@ export default {
             "content": (this as any).question,
             "model": model,
             "temperature": (this as any).temperature,
-            "site": site
+            "site": site,
+            "prompt_id": (this as any).prompt.id
           }),
           signal: (this as any).abort_controller.signal,
           // mode: 'cors'
@@ -129,6 +235,10 @@ export default {
       await copyToClipboard(content)
     }
   },
+  async fetch() {
+    (this as any).get_default_prompt();
+    (this as any).get_prompts();
+  }
 }
 </script>
 
@@ -163,6 +273,10 @@ export default {
 .ant-slider {
   width: 100%;
   margin-bottom: 16px;
+}
+
+label {
+  margin: 16px 0 8px;
 }
 
 .main {
