@@ -70,7 +70,11 @@ export default {
           })
         });
 
-        (this as any).$router.push('/users/' + (this as any).$store.state.userid)
+        if (resp.ok) {
+          (this as any).$router.push('/users/' + (this as any).$store.state.userid)
+        } else {
+          throw new Error((await resp.json()).errors)
+        }
       }
       catch (e: any) {
         alert("登录失败:" + e)

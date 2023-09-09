@@ -65,12 +65,12 @@
     <div class="main">
 
       <div class="showcase_container">
-        <div v-for="label in this.models" class="showcase">
+        <div v-for="model in this.models" class="showcase">
 
-          <div class="showcase_header">{{ label }}</div>
+          <div class="showcase_header">{{ model }}</div>
 
-          <div class="showcase_body" @click="copy(result.find(item => item.label === label)?.answer)">
-            <div v-html="md(result.find(item => item.label === label)?.answer)"></div>
+          <div class="showcase_body" @click="copy(result.find(item => item.model === model)?.answer)">
+            <div v-html="md(result.find(item => item.model === model)?.answer)"></div>
           </div>
 
         </div>
@@ -85,21 +85,15 @@ import request from '@/utils/request'
 import { parseSSEMessage, copyToClipboard } from '@/utils/lib'
 import markdown from '@/utils/markdown'
 
-const MAPPER_MODEL_LIST = [
-  { 'label': 'gpt-3.5-turbo(openai)', 'model': 'gpt-3.5-turbo', 'site': 'openai' },
-  { 'label': 'gpt-3.5-turbo(api2d.net)', 'model': 'gpt-3.5-turbo', 'site': 'api2d' },
-  { 'label': 'gpt-3.5-turbo(ai.ls)', 'model': 'gpt-3.5-turbo', 'site': 'ai.ls' },
-  { 'label': 'gpt-4(api2d.net)', 'model': 'gpt-4', 'site': 'api2d' },
-  { 'label': 'gpt-4(ai.ls)', 'model': 'gpt-4', 'site': 'ai.ls' },
-]
 export default {
   name: "UserIndexPage",
   data: () => ({
     question: '',
     result: [],
     temperature: 0.5,
-    modelList: MAPPER_MODEL_LIST.map(item => item.label),
-    models: MAPPER_MODEL_LIST.filter(item => item.label != 'gpt-3.5-turbo(openai)').map(item => item.label),
+    mapper_model_list: null,
+    modelList: null,
+    models: null,
     abort_controller: null,
     loading: false,
     prompts_modal_visible: false,
@@ -112,21 +106,21 @@ export default {
   methods: {
     async get_prompts() {
       const resp = await request('/api/v1/prompts', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    });
-    (this as any).prompts = await resp.json()
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      });
+      (this as any).prompts = await resp.json()
     },
-    async get_default_prompt(){
+    async get_default_prompt() {
       const resp = await request('/api/v1/prompts/default', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    });
-    (this as any).prompt = (await resp.json()).default_prompt
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      });
+      (this as any).prompt = (await resp.json()).default_prompt
     },
     async addPrompt() {
       const resp = await request('/api/v1/prompts', {
@@ -153,8 +147,8 @@ export default {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            "prompt_id": prompt_id,
-          }),
+          "prompt_id": prompt_id,
+        }),
       })
 
       if (resp.status == 200 || resp.status == 201) {
@@ -172,11 +166,11 @@ export default {
 
       let mapper_model: any;
       for (let model of (this as any).models) {
-        mapper_model = MAPPER_MODEL_LIST.find(item => item.label === model);
-        this.fetch_answer(mapper_model.label, mapper_model.model, mapper_model.site)
+        mapper_model = (this as any).mapper_model_list.find((item: any) => item.model === model);
+        this.fetch_answer(mapper_model.model)
       }
     },
-    async fetch_answer(label: any, model: any, site: any) {
+    async fetch_answer(model: string) {
       try {
         const response = await request('/api/v1/completions/achieve', {
           method: 'POST',
@@ -185,44 +179,51 @@ export default {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            "content": (this as any).question,
-            "model": model,
             "temperature": (this as any).temperature,
-            "site": site,
-            "prompt_id": (this as any).prompt.id
+            "prompt_id": (this as any).prompt.id,
+            "content": (this as any).question,
+            "site": model
           }),
           signal: (this as any).abort_controller.signal,
           // mode: 'cors'
         });
+        (this as any).result.push({ model: model, answer: '' })
 
-        (this as any).result.push({ label: label, answer: '' })
-        const reader: any = response.body?.pipeThrough(new TextDecoderStream()).getReader();
+        if (response.ok) {
+          const reader: any = response.body?.pipeThrough(new TextDecoderStream()).getReader();
 
-        let buf: any = []
-        while (true) {
-          const { value, done } = await reader.read();
-          if (done) break;
+          let buf: any = []
+          while (true) {
+            const { value, done } = await reader.read();
+            if (done) break;
 
-          buf += value
-          const messages = buf.split('\n\n')
-          buf = messages[messages.length - 1]
-          if (messages.length < 2)
-            return
+            buf += value
+            const messages = buf.split('\n\n')
+            buf = messages[messages.length - 1]
+            if (messages.length < 2)
+              return
 
-          for (let i = 0; i < messages.length - 1; i++) {
-            const message = messages[i]
-            const { field, value } = parseSSEMessage(message)
-            // console.log('field', field)
-            // console.log('value', value)
+            for (let i = 0; i < messages.length - 1; i++) {
+              const message = messages[i]
+              const { field, value } = parseSSEMessage(message)
+              // console.log('field', field)
+              // console.log('value', value)
 
-            let content = JSON.parse(value)?.choices[0]?.delta?.content
-            if (typeof content === 'undefined') continue;
-            (this as any).result.find((item: any) => item.label === label).answer += content
+              let content = JSON.parse(value)?.choices?.[0]?.delta?.content
+              if (typeof content === 'undefined') continue;
+              (this as any).result.find((item: any) => item.model === model).answer += content
+            }
           }
         }
+        else {
+          const resp = await response.json();
+          throw new Error(resp.error)
+        }
+
       }
       catch (e: any) {
-        (this as any).result.find((item: any) => item.label === label).answer += ("\n\nOpenAI 请求:" + e)
+        console.log('AI 请求', e);
+        (this as any).result.find((item: any) => item.model === model).answer += ("\n\nAI 请求:" + e)
       }
       finally {
         (this as any).loading = false
@@ -236,6 +237,16 @@ export default {
     }
   },
   async fetch() {
+    const resp = await request('/api/v1/info/models', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    });
+    (this as any).mapper_model_list = await resp.json();
+    (this as any).modelList = (this as any).mapper_model_list.map((item: any) => item.model);
+    (this as any).models = (this as any).mapper_model_list.filter((item: any) => item.default).map((item: any) => item.model);
+
     (this as any).get_default_prompt();
     (this as any).get_prompts();
   }
