@@ -15,7 +15,7 @@ export const mutations = {
 
 // 初始化数据方法
 export const actions = {
-  async nuxtServerInit({ commit }: { commit: any }, { app }: { app: any }) {
+  async nuxtServerInit({ commit }: Commit, { app }: App) {
     let token = app.$cookies.get('token')
 
     if (token) {
@@ -23,3 +23,6 @@ export const actions = {
     }
   }
 }
+
+type Commit = { commit: any }
+type App = { app: any }
