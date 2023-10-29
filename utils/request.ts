@@ -1,16 +1,23 @@
+import { useMainStore } from '~/store'
+
 export default async function request(path: string, options: any = {}) {
-    let url = process.env.BASE_URL + path
+    const config = useRuntimeConfig()    
+    let url = config.public.baseURL + path
 
     if (!options.headers) options.headers = {}
-    options.headers['Authorization'] = $nuxt.$store.state.token
 
+    let store = useMainStore()
+    options.headers['Authorization'] = store.$state.token
+
+    // TODO:$fetch获取到的stream locked
+    // let response = await $fetch.raw(url, options)
     let response = await fetch(url, options)
 
     let authorization = response.headers.get('Authorization')
 
     if (authorization != undefined) {
         let token = authorization.replace('Bearer ', '')
-        $nuxt.$store.commit('set_token', token)
+        store.setToken(token)
     }
 
     return response

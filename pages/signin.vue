@@ -48,13 +48,15 @@
   
 <script lang="ts">
 import request from '@/utils/request'
+import { useMainStore } from '~/store'
 
 export default {
   name: 'SigninPage',
   data: () => ({
     email: null,
     password: null,
-    bearer: null
+    bearer: null,
+    store: useMainStore()
   }),
   methods: {
     async login() {
@@ -71,7 +73,9 @@ export default {
         });
 
         if (resp.ok) {
-          (this as any).$router.push('/users/' + (this as any).$store.state.userid)
+          navigateTo({
+            path: '/users/1' // + this.store.$state.userid
+          })
         } else {
           throw new Error((await resp.json()).errors)
         }

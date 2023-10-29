@@ -2,33 +2,24 @@
   "name": "Yuanfang",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
+    "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "test": "jest"
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@nuxtjs/dotenv": "^1.4.1",
-    "ant-design-vue": "^1.7.8",
-    "cookie-universal-nuxt": "^2.2.2",
-    "core-js": "^3.25.3",
+    "@pinia/nuxt": "^0.5.1",
     "markdown-it": "^13.0.1",
-    "nuxt": "^2.15.8",
-    "vue": "^2.7.10",
-    "vue-server-renderer": "^2.7.10",
-    "vue-template-compiler": "^2.7.10"
+    "pinia": "^2.1.7"
   },
   "devDependencies": {
-    "@nuxt/types": "^2.15.8",
-    "@nuxt/typescript-build": "^2.1.0",
-    "@vue/test-utils": "^1.3.0",
-    "babel-core": "7.0.0-bridge.0",
-    "babel-jest": "^29.1.2",
-    "jest": "^29.1.2",
-    "jest-environment-jsdom": "^29.1.2",
-    "ts-jest": "^29.0.3",
-    "vue-jest": "^3.0.4"
+    "@ant-design-vue/nuxt": "^1.1.2",
+    "@nuxt/devtools": "latest",
+    "nuxt": "^3.8.0",
+    "vue": "^3.3.7",
+    "vue-router": "^4.2.5"
   }
 }

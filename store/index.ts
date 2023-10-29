@@ -1,28 +1,28 @@
-export const state = () => ({
-  token: null,
-  userid: null
-})
+import { defineStore } from "pinia";
 
-export const mutations = {
-  set_token(state: any, token: string) {
-    state.token = token;
-    (this as any).$cookies.set('token', token)
+export const useMainStore = defineStore("main", {
+  state: () => ({
+    token: null,
+    userid: null,
+  }),
+  actions: {
+    setToken(token: string) {
+      (this as any).token = token;
+
+      let cookie = useCookie("token");
+      cookie.value = token;
+    },
+    setUserId(userid: number) {
+      (this as any).userid = userid;
+    },
+    init() {
+      let cookie = useCookie("token");
+
+      let token = cookie.value;
+
+      if (token) {
+        this.setToken(token);
+      }
+    },
   },
-  set_userid(state: any, userid: number) {
-    state.userid = userid
-  }
-}
-
-// 初始化数据方法
-export const actions = {
-  async nuxtServerInit({ commit }: Commit, { app }: App) {
-    let token = app.$cookies.get('token')
-
-    if (token) {
-      commit('set_token', token)
-    }
-  }
-}
-
-type Commit = { commit: any }
-type App = { app: any }
+});

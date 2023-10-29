@@ -1,7 +1,9 @@
+import MD from 'markdown-it'
+
 export default function markdown(str: string) {
     if (typeof str === 'undefined') return '';
 
-    const md = require('markdown-it')({
+    const md = MD({
         html: false,            // Enable HTML tags in source
         xhtmlOut: false,        // Use '/' to close single tags (<br />).
         // This is only for full CommonMark compatibility.
