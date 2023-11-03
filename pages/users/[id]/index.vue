@@ -93,7 +93,7 @@
       <a-button @click="achieve" :loading="loading" type="primary"
         >元芳，你怎么看？</a-button
       >
-      <a-button v-if="loading" @click="abort_request" type="text"
+      <a-button v-if="loading" @click="abortRequest" type="text"
         >取消</a-button
       >
     </div>
@@ -103,8 +103,8 @@
         <div v-for="model in models" class="showcase">
           <div class="showcase_header">{{ model }}</div>
 
-          <div class="showcase_body" @click="copy(response_text(model))">
-            <div v-html="md(response_text(model))"></div>
+          <div class="showcase_body" @click="copy(aiMessage(model))">
+            <div v-html="md(aiMessage(model))"></div>
           </div>
         </div>
       </div>
@@ -170,7 +170,7 @@ let models: any = ref(
     .map((item: any) => item.model)
 );
 
-async function get_prompts() {
+async function getPrompts() {
   const resp = await request("/api/v1/prompts", {
     method: "GET",
     headers: {
@@ -180,7 +180,7 @@ async function get_prompts() {
   prompts.value = await resp.json();
 }
 
-async function get_default_prompt() {
+async function getDefaultPrompt() {
   const resp = await request("/api/v1/prompts/default", {
     method: "GET",
     headers: {
@@ -206,8 +206,8 @@ async function addPrompt() {
   if (resp.status == 200 || resp.status == 201) {
     add_prompt_model_visible.value = false;
 
-    get_prompts();
-    get_default_prompt();
+    getPrompts();
+    getDefaultPrompt();
   }
 }
 
@@ -224,11 +224,11 @@ async function setDefaultPrompt(prompt_id: number) {
 
   if (resp.status == 200 || resp.status == 201) {
     prompts_modal_visible.value = false;
-    get_default_prompt();
+    getDefaultPrompt();
   }
 }
 
-function abort_request() {
+function abortRequest() {
   abort_controller.value?.abort();
 }
 
@@ -242,11 +242,11 @@ async function achieve(e: any) {
     mapper_model = mapper_model_list.value.find(
       (item: any) => item.model === model
     );
-    fetch_answer(mapper_model.model);
+    fetchAnswer(mapper_model.model);
   }
 }
 
-async function fetch_answer(model: string) {
+async function fetchAnswer(model: string) {
   try {
     result.value.push({ model: model, answer: "" });
 
@@ -314,7 +314,7 @@ async function copy(content: string) {
   await copyToClipboard(content);
 }
 
-function response_text(model: string) {
+function aiMessage(model: string) {
   return result.value?.find((item: any) => item.model === model)?.answer;
 }
 </script>
