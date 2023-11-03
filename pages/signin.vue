@@ -46,44 +46,37 @@
   </div>
 </template>
   
-<script lang="ts">
+<script setup lang="ts">
 import request from '@/utils/request'
 import { useMainStore } from '~/store'
 
-export default {
-  name: 'SigninPage',
-  data: () => ({
-    email: null,
-    password: null,
-    bearer: null,
-    store: useMainStore()
-  }),
-  methods: {
-    async login() {
-      try {
-        const resp = await request('/auth/sign_in', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            "email": (this as any).email,
-            "password": (this as any).password
-          })
-        });
+let email: string;
+let password: string;
+let store: any = useMainStore();
 
-        if (resp.ok) {
-          navigateTo({
-            path: '/users/1' // + this.store.$state.userid
-          })
-        } else {
-          throw new Error((await resp.json()).errors)
-        }
-      }
-      catch (e: any) {
-        alert("登录失败:" + e)
-      }
+async function login() {
+  try {
+    const resp = await request('/auth/sign_in', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        "email": email,
+        "password": password
+      })
+    });
+
+    if (resp.ok) {
+      navigateTo({
+        path: '/users/1' // + this.store.$state.userid
+      })
+    } else {
+      throw new Error((await resp.json()).errors)
     }
+  }
+  catch (e: any) {
+    alert("登录失败:" + e)
   }
 }
 </script>
