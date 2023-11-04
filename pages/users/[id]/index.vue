@@ -1,14 +1,8 @@
 <template>
   <div class="container">
     <div class="sidebar">
-      <textarea
-        v-model="question"
-        @keyup.ctrl.enter="achieve"
-        class="form-control"
-        rows="5"
-        placeholder="请输入功能描述"
-        autofocus
-      ></textarea>
+      <textarea v-model="question" @keyup.ctrl.enter="achieve" class="form-control" rows="5" placeholder="请输入功能描述"
+        autofocus></textarea>
 
       <label>model:</label>
       <a-checkbox-group v-model:value="models" :options="modelList" />
@@ -16,49 +10,27 @@
       <label>temperature:</label>
       <a-slider v-model:value="temperature" :min="0" :max="2" :step="0.1" />
 
-      <label
-        >prompt:
-        <button @click="prompts_modal_visible = true">管理</button></label
-      >
+      <label>prompt:
+        <button @click="prompts_modal_visible = true">管理</button></label>
       <p>{{ prompt?.content }}</p>
-      <a-modal
-        v-model:open="prompts_modal_visible"
-        title="Prompts Library"
-        centered
-        :footer="null"
-        @ok="prompts_modal_visible = false"
-      >
-        <a-button type="primary" @click="add_prompt_model_visible = true"
-          >添加</a-button
-        >
+      <a-modal v-model:open="prompts_modal_visible" title="Prompts Library" centered :footer="null"
+        @ok="prompts_modal_visible = false">
+        <a-button type="primary" @click="add_prompt_model_visible = true">添加</a-button>
 
-        <a-modal
-          v-model:open="add_prompt_model_visible"
-          title="Add Prompt"
-          centered
-          @ok="addPrompt"
-        >
+        <a-modal v-model:open="add_prompt_model_visible" title="Add Prompt" centered @ok="addPrompt">
           <div class="form">
             <div class="form-fieldset">
               <div class="form-label">
                 <label>prompt</label>
               </div>
               <div class="form-input-container">
-                <textarea
-                  type="text"
-                  placeholder="请输入prompt"
-                  v-model="new_prompt_content"
-                  required
-                  rows="5"
-                ></textarea>
+                <textarea type="text" placeholder="请输入prompt" v-model="new_prompt_content" required rows="5"></textarea>
               </div>
             </div>
 
             <div class="form-fieldset">
               <div class="form-input-container">
-                <a-checkbox v-model:checked="is_prompt_default"
-                  >设为默认</a-checkbox
-                >
+                <a-checkbox v-model:checked="is_prompt_default">设为默认</a-checkbox>
               </div>
             </div>
           </div>
@@ -66,10 +38,7 @@
 
         <a-list bordered :data-source="prompts">
           <template #renderItem="{ item }">
-            <a-list-item
-              v-bind:data-index="item?.id"
-              @click="setDefaultPrompt(item?.id)"
-            >
+            <a-list-item v-bind:data-index="item?.id" @click="setDefaultPrompt(item?.id)">
               <a-tag color="green" v-if="item?.default">default</a-tag>
               <br />
 
@@ -90,12 +59,8 @@
         </a-list>
       </a-modal>
 
-      <a-button @click="achieve" :loading="loading" type="primary"
-        >元芳，你怎么看？</a-button
-      >
-      <a-button v-if="loading" @click="abortRequest" type="text"
-        >取消</a-button
-      >
+      <a-button @click="achieve" :loading="loading" type="primary">元芳，你怎么看？</a-button>
+      <a-button v-if="loading" @click="abortRequest" type="text">取消</a-button>
     </div>
 
     <div class="main">

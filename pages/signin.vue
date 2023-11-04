@@ -42,13 +42,12 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
-  
+
 <script setup lang="ts">
-import request from '@/utils/request'
-import { useMainStore } from '~/store'
+import request from "@/utils/request";
+import { useMainStore } from "~/store";
 
 let email: string;
 let password: string;
@@ -56,27 +55,26 @@ let store: any = useMainStore();
 
 async function login() {
   try {
-    const resp = await request('/auth/sign_in', {
-      method: 'POST',
+    const resp = await request("/auth/sign_in", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        "email": email,
-        "password": password
-      })
+        email: email,
+        password: password,
+      }),
     });
 
     if (resp.ok) {
       navigateTo({
-        path: '/users/1' // + this.store.$state.userid
-      })
+        path: "/users/1", // + this.store.$state.userid
+      });
     } else {
-      throw new Error((await resp.json()).errors)
+      throw new Error((await resp.json()).errors);
     }
-  }
-  catch (e: any) {
-    alert("登录失败:" + e)
+  } catch (e: any) {
+    alert("登录失败:" + e);
   }
 }
 </script>
@@ -136,30 +134,30 @@ async function login() {
   justify-content: flex-start;
   align-items: flex-start;
   min-width: 20rem;
-  padding: .5rem 0;
+  padding: 0.5rem 0;
 }
 
 .form-fieldset .form-input-container {
   width: 100%;
-  margin: .5rem 0;
+  margin: 0.5rem 0;
 }
 
 .form-fieldset .form-label label {
-  margin: .5rem 0;
-  padding: .5rem 0;
+  margin: 0.5rem 0;
+  padding: 0.5rem 0;
 }
 
 .form-fieldset input:focus {
   outline-style: none;
   border-color: rgb(149, 195, 225);
-  box-shadow: 0 0 .5rem #51cbee;
+  box-shadow: 0 0 0.5rem #51cbee;
 }
 
 .form-fieldset input {
   width: 100%;
   min-height: 1.5rem;
-  padding: .5rem;
-  border-width: .03rem;
+  padding: 0.5rem;
+  border-width: 0.03rem;
 }
 
 .custom-button-container {
@@ -173,7 +171,7 @@ async function login() {
 }
 
 .custom-button-container a:hover {
-  color: blue
+  color: blue;
 }
 
 .form-button-bar button {
