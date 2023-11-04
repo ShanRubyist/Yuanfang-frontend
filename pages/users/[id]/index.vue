@@ -82,6 +82,11 @@ import request from "@/utils/request";
 import { parseSSEMessage, copyToClipboard } from "@/utils/lib";
 import markdown from "@/utils/markdown";
 
+const route = useRoute();
+useHead({
+  title: '用户中心 - ' + route.params.id,
+})
+
 let question: any = ref("");
 let result: any = ref([]);
 let temperature = ref(0.5);

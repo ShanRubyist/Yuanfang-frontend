@@ -49,6 +49,10 @@
 import request from "@/utils/request";
 import { useMainStore } from "~/store";
 
+useHead({
+  title: "Signin",
+})
+
 let email: string;
 let password: string;
 let store: any = useMainStore();
