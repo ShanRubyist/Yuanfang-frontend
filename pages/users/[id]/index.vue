@@ -11,53 +11,14 @@
       <a-slider v-model:value="temperature" :min="0" :max="2" :step="0.1" />
 
       <label>prompt:
-        <button @click="prompts_modal_visible = true">管理</button></label>
+        <button @click="prompts_modal_visible = true">管理</button>
+      </label>
       <p>{{ prompt?.content }}</p>
-      <a-modal v-model:open="prompts_modal_visible" title="Prompts Library" centered :footer="null"
-        @ok="prompts_modal_visible = false">
-        <a-button type="primary" @click="add_prompt_model_visible = true">添加</a-button>
 
-        <a-modal v-model:open="add_prompt_model_visible" title="Add Prompt" centered @ok="addPrompt">
-          <div class="form">
-            <div class="form-fieldset">
-              <div class="form-label">
-                <label>prompt</label>
-              </div>
-              <div class="form-input-container">
-                <textarea type="text" placeholder="请输入prompt" v-model="new_prompt_content" required rows="5"></textarea>
-              </div>
-            </div>
-
-            <div class="form-fieldset">
-              <div class="form-input-container">
-                <a-checkbox v-model:checked="is_prompt_default">设为默认</a-checkbox>
-              </div>
-            </div>
-          </div>
-        </a-modal>
-
-        <a-list bordered :data-source="prompts">
-          <template #renderItem="{ item }">
-            <a-list-item v-bind:data-index="item?.id" @click="setDefaultPrompt(item?.id)">
-              <a-tag color="green" v-if="item?.default">default</a-tag>
-              <br />
-
-              {{ item?.content }}
-
-              <button>edit</button>
-              <button>delete</button>
-            </a-list-item>
-          </template>
-
-          <!-- <template #header>
-            <div>Header</div>
-          </template>
-          
-          <template #footer>
-            <div>Footer</div>
-          </template> -->
-        </a-list>
-      </a-modal>
+      <PromptLibrary :visible="prompts_modal_visible" :prompts="prompts"
+        @change_prompts_model_visible="prompts_modal_visible = false" @set_default_prompt="setDefaultPrompt"
+        @update_default_prompt="getDefaultPrompt" @update_prompts="getPrompts">
+      </PromptLibrary>
 
       <a-button @click="achieve" :loading="loading" type="primary">元芳，你怎么看？</a-button>
       <a-button v-if="loading" @click="abortRequest" type="text">取消</a-button>
@@ -93,9 +54,6 @@ let temperature: Ref<number> = ref(0.5);
 let abort_controller: Ref<AbortController | null> = ref(null);
 let loading: Ref<boolean> = ref(false);
 let prompts_modal_visible: Ref<boolean> = ref(false);
-let add_prompt_model_visible: Ref<boolean> = ref(false);
-let is_prompt_default: Ref<boolean> = ref(false);
-let new_prompt_content: Ref<string> = ref("");
 
 let { data: mapper_model_list } = await useAsyncData("modelList", async () => {
   let resp = await request("/api/v1/info/models", {
@@ -159,26 +117,6 @@ async function getDefaultPrompt(): Promise<void> {
   });
 
   prompt.value = await (await resp.json()).default_prompt;
-}
-
-async function addPrompt(): Promise<void> {
-  const resp = await request("/api/v1/prompts", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      content: new_prompt_content,
-      default: is_prompt_default,
-    }),
-  });
-
-  if (resp.status == 200 || resp.status == 201) {
-    add_prompt_model_visible.value = false;
-
-    getPrompts();
-    getDefaultPrompt();
-  }
 }
 
 async function setDefaultPrompt(prompt_id: number): Promise<void> {
