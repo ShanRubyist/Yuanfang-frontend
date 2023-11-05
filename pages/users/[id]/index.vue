@@ -87,15 +87,15 @@ useHead({
   title: '用户中心 - ' + route.params.id,
 })
 
-let question: any = ref("");
-let result: any = ref([]);
-let temperature = ref(0.5);
-let abort_controller: any = ref(null);
-let loading: any = ref(false);
-let prompts_modal_visible: any = ref(false);
-let add_prompt_model_visible: any = ref(false);
-let is_prompt_default: any = ref(false);
-let new_prompt_content: any = ref("");
+let question: Ref<string> = ref("");
+let result: Ref<any[]> = ref([]);
+let temperature: Ref<number> = ref(0.5);
+let abort_controller: Ref<AbortController | null> = ref(null);
+let loading: Ref<boolean> = ref(false);
+let prompts_modal_visible: Ref<boolean> = ref(false);
+let add_prompt_model_visible: Ref<boolean> = ref(false);
+let is_prompt_default: Ref<boolean> = ref(false);
+let new_prompt_content: Ref<string> = ref("");
 
 let { data: mapper_model_list } = await useAsyncData("modelList", async () => {
   let resp = await request("/api/v1/info/models", {
@@ -140,7 +140,7 @@ let models: any = ref(
     .map((item: any) => item.model)
 );
 
-async function getPrompts() {
+async function getPrompts(): Promise<void> {
   const resp = await request("/api/v1/prompts", {
     method: "GET",
     headers: {
@@ -150,7 +150,7 @@ async function getPrompts() {
   prompts.value = await resp.json();
 }
 
-async function getDefaultPrompt() {
+async function getDefaultPrompt(): Promise<void> {
   const resp = await request("/api/v1/prompts/default", {
     method: "GET",
     headers: {
@@ -161,7 +161,7 @@ async function getDefaultPrompt() {
   prompt.value = await (await resp.json()).default_prompt;
 }
 
-async function addPrompt() {
+async function addPrompt(): Promise<void> {
   const resp = await request("/api/v1/prompts", {
     method: "POST",
     headers: {
@@ -181,7 +181,7 @@ async function addPrompt() {
   }
 }
 
-async function setDefaultPrompt(prompt_id: number) {
+async function setDefaultPrompt(prompt_id: number): Promise<void> {
   const resp = await request("/api/v1/prompts/default", {
     method: "POST",
     headers: {
@@ -198,11 +198,11 @@ async function setDefaultPrompt(prompt_id: number) {
   }
 }
 
-function abortRequest() {
+function abortRequest(): void {
   abort_controller.value?.abort();
 }
 
-async function achieve(e: any) {
+async function achieve(e: any): Promise<void> {
   loading.value = true;
   // console.log(models)
   abort_controller.value = new AbortController();
@@ -216,7 +216,7 @@ async function achieve(e: any) {
   }
 }
 
-async function fetchAnswer(model: string) {
+async function fetchAnswer(model: string): Promise<void> {
   try {
     result.value.push({ model: model, answer: "" });
 
@@ -232,7 +232,7 @@ async function fetchAnswer(model: string) {
         content: question.value,
         site: model,
       }),
-      signal: abort_controller.value.signal,
+      signal: abort_controller.value?.signal,
       // mode: 'cors'
     });
 
@@ -276,15 +276,15 @@ async function fetchAnswer(model: string) {
   }
 }
 
-function md(str: string) {
+function md(str: string): string {
   return markdown(str);
 }
 
-async function copy(content: string) {
+async function copy(content: string): Promise<void> {
   await copyToClipboard(content);
 }
 
-function aiMessage(model: string) {
+function aiMessage(model: string): string {
   return result.value?.find((item: any) => item.model === model)?.answer;
 }
 </script>

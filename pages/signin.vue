@@ -57,7 +57,7 @@ let email: string;
 let password: string;
 let store: any = useMainStore();
 
-async function login() {
+async function login(): Promise<void> {
   try {
     const resp = await request("/auth/sign_in", {
       method: "POST",
