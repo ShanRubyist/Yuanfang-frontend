@@ -13,7 +13,8 @@
   "dependencies": {
     "@pinia/nuxt": "^0.5.1",
     "markdown-it": "^13.0.1",
-    "pinia": "^2.1.7"
+    "pinia": "^2.1.7",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@ant-design-vue/nuxt": "^1.1.2",

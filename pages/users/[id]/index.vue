@@ -42,6 +42,7 @@
 import request from "@/utils/request";
 import { parseSSEMessage, copyToClipboard } from "@/utils/lib";
 import markdown from "@/utils/markdown";
+import { v4 as uuidv4 } from 'uuid';
 
 const route = useRoute();
 useHead({
@@ -146,15 +147,16 @@ async function achieve(e: any): Promise<void> {
   abort_controller.value = new AbortController();
 
   let mapper_model: any;
+  let achieve_id = uuidv4();
   for (let model of models.value) {
     mapper_model = mapper_model_list.value.find(
       (item: any) => item.model === model
     );
-    fetchAnswer(mapper_model.model);
+    fetchAnswer(achieve_id, mapper_model.model);
   }
 }
 
-async function fetchAnswer(model: string): Promise<void> {
+async function fetchAnswer(achieve_id: string, model: string): Promise<void> {
   try {
     result.value.push({ model: model, answer: "" });
 
@@ -165,6 +167,7 @@ async function fetchAnswer(model: string): Promise<void> {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
+        achieve_id: achieve_id,
         temperature: temperature.value,
         prompt_id: prompt.value.id,
         content: question.value,
