@@ -17,12 +17,7 @@ export const useMainStore = defineStore("main", {
     },
     init() {
       let cookie = useCookie("token");
-
-      let token = cookie.value;
-
-      if (token) {
-        this.setToken(token);
-      }
+      this.setToken(cookie.value);
     },
   },
 });
