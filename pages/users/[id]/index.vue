@@ -142,6 +142,7 @@ function abortRequest(): void {
 }
 
 async function achieve(e: any): Promise<void> {
+  result.value = [];
   loading.value = true;
   // console.log(models)
   abort_controller.value = new AbortController();
@@ -154,6 +155,7 @@ async function achieve(e: any): Promise<void> {
     );
     fetchAnswer(achieve_id, mapper_model.model);
   }
+  question.value = '';
 }
 
 async function fetchAnswer(achieve_id: string, model: string): Promise<void> {
