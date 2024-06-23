@@ -35,19 +35,91 @@
         </div>
       </div>
     </div>
+
+  <NeedCreditModal :isOpen="isOpen" @closeModal="isOpen=false"></NeedCreditModal>
+
   </div>
 </template>
 
 <script setup lang="ts">
-import request from "@/utils/request";
+
+import {request, request2} from "@/utils/request";
+import { useRoute } from "vue-router";
+import { useMainStore } from '~/store'
 import { parseSSEMessage, copyToClipboard } from "@/utils/lib";
 import markdown from "@/utils/markdown";
 import { v4 as uuidv4 } from 'uuid';
 
-const route = useRoute();
+
+const { t } = useI18n()
+const localePath = useLocalePath()
+
+const store = useMainStore()
+const config = useRuntimeConfig().public
+const has_login = config.has_login
+
+const isOpen = ref(false)
+
 useHead({
-  title: '用户中心 - ' + route.params.id,
+  title: t("index.title"),
+  meta: [
+    { name: "description", content: t("index.description") },
+  ]
 })
+
+const route = useRoute()
+const params = route.query
+
+const { notify } = useNotify()
+
+if (params.code) {
+  const resp = await request("/token", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(
+      {
+        code: params.code,
+      }
+    )
+  });
+
+  if (resp.status === 200) {
+    let data = resp.data.data;
+
+    let token = data["Authorization"].replace('Bearer ', '')
+
+    let store = useMainStore()
+    await store.setToken(token)
+
+    useRouter().replace(localePath('/'))
+  } else {
+    notify('error', resp.data.errors)
+  }
+}
+else {
+  let { data: user_info } = await useAsyncData("user_info", async () => {
+    if (has_login) {
+      await getUserInfo()
+    }
+  })
+}
+
+async function getUserInfo() {
+  const resp = await request("/api/v1/user_info", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    }
+  });
+
+  if (resp.status == 200) {
+    await store.setUserInfo(resp.data)
+  } else {
+    await store.setUserInfo({})
+  }
+}
 
 let question: Ref<string> = ref("");
 let result: Ref<any[]> = ref([]);
@@ -57,7 +129,7 @@ let loading: Ref<boolean> = ref(false);
 let prompts_modal_visible: Ref<boolean> = ref(false);
 
 let { data: mapper_model_list } = await useAsyncData("modelList", async () => {
-  let resp = await request("/api/v1/info/models", {
+  let resp = await request2("/api/v1/info/models", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -67,7 +139,7 @@ let { data: mapper_model_list } = await useAsyncData("modelList", async () => {
 });
 
 let { data: prompts } = await useAsyncData("prompts", async () => {
-  let resp = await request("/api/v1/prompts", {
+  let resp = await request2("/api/v1/prompts", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -77,7 +149,7 @@ let { data: prompts } = await useAsyncData("prompts", async () => {
 });
 
 let { data: prompt } = await useAsyncData("defaut_prompt", async () => {
-  let resp = await request("/api/v1/prompts/default", {
+  let resp = await request2("/api/v1/prompts/default", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -100,7 +172,7 @@ let models: any = ref(
 );
 
 async function getPrompts(): Promise<void> {
-  const resp = await request("/api/v1/prompts", {
+  const resp = await request2("/api/v1/prompts", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -110,7 +182,7 @@ async function getPrompts(): Promise<void> {
 }
 
 async function getDefaultPrompt(): Promise<void> {
-  const resp = await request("/api/v1/prompts/default", {
+  const resp = await request2("/api/v1/prompts/default", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -121,7 +193,7 @@ async function getDefaultPrompt(): Promise<void> {
 }
 
 async function setDefaultPrompt(prompt_id: number): Promise<void> {
-  const resp = await request("/api/v1/prompts/default", {
+  const resp = await request2("/api/v1/prompts/default", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -159,10 +231,10 @@ async function achieve(e: any): Promise<void> {
 }
 
 async function fetchAnswer(achieve_id: string, model: string): Promise<void> {
-  try {
+  // try {
     result.value.push({ model: model, answer: "" });
 
-    const response = await request("/api/v1/completions/achieve", {
+    const response = await request2("/api/v1/completions/achieve", {
       method: "POST",
       headers: {
         responseType: "stream",
@@ -171,7 +243,7 @@ async function fetchAnswer(achieve_id: string, model: string): Promise<void> {
       body: JSON.stringify({
         achieve_id: achieve_id,
         temperature: temperature.value,
-        prompt_id: prompt.value.id,
+        prompt_id: prompt.value?.id,
         content: question.value,
         site: model,
       }),
@@ -206,17 +278,24 @@ async function fetchAnswer(achieve_id: string, model: string): Promise<void> {
             content;
         }
       }
-    } else {
-      const resp = await response.json();
-      throw new Error(resp.error);
-    }
-  } catch (e: any) {
-    console.log("AI 请求", e);
-    result.value.find((item: any) => item.model === model).answer +=
-      "\n\nAI 请求:" + e;
-  } finally {
-    loading.value = false;
+    }  else if (response.status === 403) {
+    //to charge
+    console.log("need charge")
+isOpen.value=true
   }
+    else {
+      console.log(response)
+
+      const resp = await response.json();
+      throw new Error(resp?.error);
+    }
+  // } catch (e: any) {
+  //   console.log("AI 请求", e);
+  //   result.value.find((item: any) => item.model === model).answer +=
+  //     "\n\nAI 请求:" + e;
+  // } finally {
+  //   loading.value = false;
+  // }
 }
 
 function md(str: string): string {
@@ -238,7 +317,7 @@ function aiMessage(model: string): string {
   flex-direction: row;
   justify-content: flex-start;
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   /* max-width: 126.25rem; */
 }
 

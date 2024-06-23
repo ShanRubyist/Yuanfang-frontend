@@ -1,0 +1,157 @@
+{
+  "seo": {
+    "title": "Online Morse Code Translator, Decoder, Generator, Converter",
+    "description":"Morse Code Translator is a Morse Code Decoder, Generator, Converter to translate Morse Code to text, or translate text to Morse Code."
+  },
+  "index": {
+    "entry": "Home",
+    "title": "a good app",
+    "description": "this is a good app",
+    "hero": {
+      "h1": {
+        "part1": "It's your",
+        "part2": "all-in-one",
+        "part3": "project solution",
+      },
+      "note": "111",
+      "get_start": "Get Started"
+    },
+    "features": {
+      "title": "Make every step user_centric",
+      "note": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim.",
+      "item1": "Support",
+      "item1_note": "note111",
+      "item2": "Support",
+      "item2_note": "note111",
+      "item3": "Support",
+      "item3_note": "note111"
+    },
+    "call_to_action": {
+      "get_start": "Get Started",
+      "get_start_note": "No credit card required.",
+      "h2": "Lightning Fast Webflow Dev Made Easy",
+      "h2_p": "14 day free trial. No credit card required."
+    }
+  },
+  "pricing": {
+    "entry": "Pricing",
+    "title": "a good app",
+    "description": "this is a good app"
+  },
+  "faq": {
+    "entry": "FAQ",
+    "title": "a good app",
+    "description": "this is a good app"
+  },
+  "blog": {
+    "entry": "Blog",
+    "title": "a good app",
+    "description": "this is a good app",
+    "no_article_found": "No articles found.",
+    "h2": "The latest and greatest news",
+    "h2_p": "Lorem ipsum dolor sit amet elit ut aliquam",
+    "tag": "Hot",
+    "search_placeholder": "Search..."
+  },
+  "header": {
+    "sign_in_as": "Signed in as"
+  },
+  "footer": {
+    "terms_of_service": "Terms of Service",
+    "privacy_policy": "Privacy Policy",
+    "support": "Support",
+    "products": "products",
+    "friends": "Friends"
+  },
+  "auth": {
+    "signup": {
+      "entry": "Sign up",
+      "title": "a good app",
+      "description": "this is a good app",
+      "h1": "Sign Up",
+      "h2": "Start 14_day free trial",
+      "h2_p": "14 day free trial. No credit card required.",
+      "sign_in_with_google": "Sign up with Google",
+      "sign_up_with_email": "or sign up with email",
+      "already_have_an_account": "Already have an account? ",
+      "email_placeholder": "Email",
+      "password_placeholder": "Password (min 8 characters)",
+      "confirm_password_placeholder": "Password Confirm",
+      "sign_up": "Sign Up"
+    },
+    "login": {
+      "entry": "Sign in",
+      "title": "a good app",
+      "description": "this is a good app",
+      "h1": "Login",
+      "h2": "Start 14_day free trial",
+      "h2_p": "14 day free trial. No credit card required.",
+      "sign_in_with_google": "Sign up with Google",
+      "sign_in_with_email": "or login with email",
+      "dont_have_an_account": "Don't have an account?",
+      "email_placeholder": "Email",
+      "password_placeholder": "Password",
+      "sign_in": "Sign In"
+    },
+    "sign_out": {
+      "entry": "Sign out"
+    },
+    "password_reset": {
+      "entry": "Password Reset",
+      "title": "a good app",
+      "description": "this is a good app",
+      "h1": "Password Reset",
+      "password_placeholder": "Password",
+      "password_confirmation_placeholder": "Password Confirmation",
+      "password_reset_btn": "Send Password Reset"
+    },
+    "forgot_password": {
+      "entry": "Forgot password?",
+      "title": "a good app",
+      "description": "this is a good app",
+      "h1": "Forgot Password",
+      "email_placeholder": "Email",
+      "btn": "Send Password Reset"
+    },
+    "email_verifications": {
+      "entry": "Email Verifications",
+      "title": "a good app",
+      "description": "this is a good app",
+      "h1_account_confirm": "Account Verifications",
+      "h1_reset_password": "Reset Password",
+      "p_account_confirm": "Please check your email to confirm your account.",
+      "p_reset_password": "Please check your email to reset your password.",
+      "resend": "Resend",
+      "check_email": "Check your email"
+    }
+  },
+  "payment": {
+    "credit": "credit",
+    "payment_history": {
+      "entry": "Payment History",
+      "title": "a good app",
+      "description": "this is a good app",
+      "h1": "Payment History",
+      "loading": "Loading...",
+      "total_label": "Total:"
+    }
+  },
+  "need_credit_modal": {
+    "title": "alter",
+    "content": "You don't has enough credit!",
+    "pay_btn": "Charge"
+  },
+  "usage": {
+    "entry": "Usage",
+    "title": "a good app",
+    "description": "this is a good app"
+  },
+  "settings": {
+    "entry": "Settings",
+    "title": "a good app",
+    "description": "this is a good app"
+  },
+  "slug": {
+    "page_not_found": "Page not found"
+  }
+}

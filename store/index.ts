@@ -4,6 +4,7 @@ export const useMainStore = defineStore("main", {
   state: () => ({
     token: null,
     userid: null,
+    userInfo: {}
   }),
   actions: {
     setToken(token: string) {
@@ -14,6 +15,9 @@ export const useMainStore = defineStore("main", {
     },
     setUserId(userid: number) {
       (this as any).userid = userid;
+    },
+    setUserInfo(userInfo: object) {
+      (this as any).userInfo = userInfo;
     },
     init() {
       let cookie = useCookie("token");

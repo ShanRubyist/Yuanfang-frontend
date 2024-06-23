@@ -43,7 +43,7 @@ let is_prompt_default: Ref<boolean> = ref(false);
 let new_prompt_content: Ref<string> = ref("");
 
 async function newPrompt(): Promise<void> {
-    const resp = await request("/api/v1/prompts", {
+    const resp = await request2("/api/v1/prompts", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
