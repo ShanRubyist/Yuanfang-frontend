@@ -9,8 +9,8 @@ export default defineNuxtRouteMiddleware((to, from) => {
   let token = store.$state.token;
 
   if ((token == null || token == undefined) && to.fullPath != "/signin") {
-    return navigateTo({
-      path: "/signin",
-    });
+    // return navigateTo({
+    //   path: "/signin",
+    // });
   }
 });
