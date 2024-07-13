@@ -28,6 +28,7 @@ export default defineNuxtConfig({
     "@nuxtjs/sitemap",
     "@nuxt/content",
     "@nuxtjs/i18n",
+    "nuxt-gtag",
   ],
 
   devtools: { enabled: true },
@@ -141,4 +142,8 @@ export default defineNuxtConfig({
   ui: {
     icons: ["simple-icons"],
   },
+
+  gtag: {
+    id: process.env.GTAG_ID
+  }
 });
