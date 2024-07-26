@@ -8,7 +8,7 @@
           <!-- SVG LOGO - YOU CAN REPLACE THIS -->
           <a href="#">
             <img
-              src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f66cdeeb4ddfdae25a26c_%5BA%5D--Navbar%20Brand.png"
+              src="/brand.png"
               alt="" class="inline-block max-h-6" />
           </a>
           <!-- MENU CONTENT 1 -->

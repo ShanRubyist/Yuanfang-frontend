@@ -5,7 +5,7 @@
     <div class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-8">
       <a href="#" class="mb-12 inline-block max-w-full">
         <img
-          src="https://assets.website-files.com/646f65e37fe0275cfb808405/646f66cdeeb4ddfdae25a26c_%5BA%5D--Navbar%20Brand.png"
+          src="/brand.png"
           alt="" class="inline-block max-h-10" />
       </a>
 
