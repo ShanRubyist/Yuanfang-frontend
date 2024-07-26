@@ -17,7 +17,7 @@
               {{ t('index.entry') }}
             </NuxtLink>
 
-            <NuxtLink :to="localePath('/pricing')" class="font-inter rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4">
+            <NuxtLink v-if="has_payment" :to="localePath('/pricing')" class="font-inter rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4">
               {{ t('pricing.entry') }}
             </NuxtLink>
 
@@ -25,10 +25,10 @@
               {{ t('faq.entry') }}
             </NuxtLink>
 
-            <NuxtLink :to="localePath('/blog')"
+            <!-- <NuxtLink :to="localePath('/blog')"
               class="font-inter rounded-lg pb-8 hover:text-[#c9fd02] lg:px-6 lg:py-4 lg:pb-0">
               {{ t('blog.entry') }}
-            </NuxtLink>
+            </NuxtLink> -->
           </div>
 
           <!-- MENU CONTENT 2 -->
