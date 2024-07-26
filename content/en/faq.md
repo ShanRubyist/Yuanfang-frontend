@@ -1,8 +1,9 @@
 ---
 sitemap:
-  loc: '/faq'
-title: 'FAQ'
-date: '2024-06-15'
+  loc: "/faq"
+title: "FAQ"
+description: ""
+date: "2024-06-15"
 ---
 
 ## What is ChatbotHub?

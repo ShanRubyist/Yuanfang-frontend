@@ -1,3 +1,7 @@
+---
+title: 'Nutzungsbedingungen'
+description: ''
+---
 ***Wirksamkeitsdatum: 27. März 2024***
 
 Willkommen bei {{$doc.site_name}}! Diese Nutzungsbedingungen ("Bedingungen") regeln Ihre Nutzung der {{$doc.site_name}}-Website unter {{$doc.site_url}} ("Website"), einschließlich aller Inhalte, Dienste und Produkte, die auf oder über die Website verfügbar sind. Die Website ist im Besitz und wird betrieben von {{$doc.site_name}} ("wir", "uns" oder "unser").

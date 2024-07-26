@@ -1,3 +1,7 @@
+---
+title: 'Politique de confidentialité'
+description: ''
+---
 ***Date d'effet : 27 mars 2024***
 
 Bienvenue sur {{$doc.site_name}} ! Votre vie privée est importante pour nous. Cette Politique de Confidentialité explique comment nous collectons, utilisons, protégeons et gérons vos informations personnelles sur notre site web situé à {{$doc.site_url}} ("Site Web"). Cette politique s'applique à tous les utilisateurs du Site Web.

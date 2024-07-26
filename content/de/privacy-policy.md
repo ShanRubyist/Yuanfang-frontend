@@ -1,3 +1,7 @@
+---
+title: 'Datenschutzerklärung'
+description: ''
+---
 ***Wirksamkeitsdatum: 27. März 2024***
 
 Willkommen bei {{$doc.site_name}}! Ihre Privatsphäre ist uns wichtig. Diese Datenschutzrichtlinie erklärt, wie wir Ihre persönlichen Informationen auf unserer Website unter {{$doc.site_url}} ("Website") sammeln, verwenden, schützen und verarbeiten. Diese Richtlinie gilt für alle Nutzer der Website.

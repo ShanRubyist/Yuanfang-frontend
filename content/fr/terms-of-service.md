@@ -1,3 +1,7 @@
+---
+title: "Conditions d'utilisation"
+description: ''
+---
 ***Date d'effet : 27 mars 2024***
 
 Bienvenue sur {{$doc.site_name}} ! Ces Conditions d'Utilisation ("Conditions") régissent votre utilisation du site web {{$doc.site_name}} situé à {{$doc.site_url}} ("Site Web"), y compris tout le contenu, les services et les produits disponibles sur ou via le site web. Le Site Web est détenu et exploité par {{$doc.site_name}} ("nous", "notre" ou "nos").
