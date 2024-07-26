@@ -1,4 +1,157 @@
 {
-  "terms-of-service": "Nutzungsbedingungen",
-  "privacy-policy": "Datenschutzrichtlinie"
+  "seo": {
+    "title": "ChatbotHub - Der All-in-One-Chatbot-Client",
+    "description": "All-in-One-Chatbot-Client, nutzen Sie ChatGPT, Gemini, Claude, Bing Copilot und weitere Chatbots gleichzeitig"
+  },
+  "index": {
+    "entry": "Startseite",
+    "title": "All-in-One-Chatbot-Client",
+    "description": "All-in-One-Chatbot-Client, nutzen Sie ChatGPT, Gemini, Claude und weitere Chatbots gleichzeitig",
+    "hero": {
+      "h1": {
+        "part1": "Es ist Ihre",
+        "part2": "All-in-One",
+        "part3": "Projektlösung",
+      },
+      "note": "111",
+      "get_start": "Jetzt starten"
+    },
+    "features": {
+      "title": "Jeden Schritt benutzerzentriert machen",
+      "note": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim.",
+      "item1": "Support",
+      "item1_note": "Notiz111",
+      "item2": "Support",
+      "item2_note": "Notiz111",
+      "item3": "Support",
+      "item3_note": "Notiz111"
+    },
+    "call_to_action": {
+      "get_start": "Jetzt starten",
+      "get_start_note": "Keine Kreditkarte erforderlich.",
+      "h2": "Unglaublich schnelle Webflow-Entwicklung leicht gemacht",
+      "h2_p": "14 Tage kostenlose Probezeit. Keine Kreditkarte erforderlich."
+    }
+  },
+  "pricing": {
+    "entry": "Preise",
+    "title": "Preise",
+    "description": "ChatbotHub bietet eine benutzerfreundliche Online-Chat-Schnittstelle für intelligente Gespräche."
+  },
+  "faq": {
+    "entry": "FAQ",
+    "title": "Häufig gestellte Fragen",
+    "description": "Nutzer-FAQ zu ChatbotHub"
+  },
+  "blog": {
+    "entry": "Blog",
+    "title": "Blog",
+    "description": "ChatbotHub bietet eine benutzerfreundliche Online-Chat-Schnittstelle für intelligente Gespräche.",
+    "no_article_found": "Keine Artikel gefunden.",
+    "h2": "Die neuesten und besten Nachrichten",
+    "h2_p": "",
+    "tag": "Angesagt",
+    "search_placeholder": "Suche..."
+  },
+  "header": {
+    "sign_in_as": "Angemeldet als"
+  },
+  "footer": {
+    "terms_of_service": "Nutzungsbedingungen",
+    "privacy_policy": "Datenschutzerklärung",
+    "support": "Support",
+    "products": "Produkte",
+    "friends": "Freunde"
+  },
+  "auth": {
+    "signup": {
+      "entry": "Registrieren",
+      "title": "Registrieren",
+      "description": "ChatbotHub bietet eine benutzerfreundliche Online-Chat-Schnittstelle für intelligente Gespräche.",
+      "h1": "Registrierung",
+      "h2": "Beginnen Sie jetzt Ihre 14-tägige Gratis-Testphase",
+      "h2_p": "14 Tage Gratis-Testphase. Keine Kreditkarte erforderlich.",
+      "sign_in_with_google": "Registrieren mit Google",
+      "sign_up_with_email": "oder per E-Mail registrieren",
+      "already_have_an_account": "Sie haben bereits ein Konto? ",
+      "email_placeholder": "E-Mail",
+      "password_placeholder": "Passwort (mindestens 8 Zeichen)",
+      "confirm_password_placeholder": "Passwortbestätigung",
+      "sign_up": "Registrieren"
+    },
+    "login": {
+      "entry": "Anmelden",
+      "title": "Anmelden",
+      "description": "ChatbotHub bietet eine benutzerfreundliche Online-Chat-Schnittstelle für intelligente Gespräche.",
+      "h1": "Login",
+      "h2": "Beginnen Sie jetzt Ihre 14-tägige Gratis-Testphase",
+      "h2_p": "14 Tage Gratis-Testphase. Keine Kreditkarte erforderlich.",
+      "sign_in_with_google": "Anmelden mit Google",
+      "sign_in_with_email": "oder per E-Mail anmelden",
+      "dont_have_an_account": "Sie haben noch kein Konto?",
+      "email_placeholder": "E-Mail",
+      "password_placeholder": "Passwort",
+      "sign_in": "Anmelden"
+    },
+    "sign_out": {
+      "entry": "Abmelden"
+    },
+    "password_reset": {
+      "entry": "Passwort zurücksetzen",
+      "title": "Passwort zurücksetzen",
+      "description": "ChatbotHub bietet eine benutzerfreundliche Online-Chat-Schnittstelle für intelligente Gespräche.",
+      "h1": "Passwort zurücksetzen",
+      "password_placeholder": "Passwort",
+      "password_confirmation_placeholder": "Passwortbestätigung",
+      "password_reset_btn": "Passwort-Reset zusenden"
+    },
+    "forgot_password": {
+      "entry": "Passwort vergessen?",
+      "title": "Passwort vergessen",
+      "description": "ChatbotHub bietet eine benutzerfreundliche Online-Chat-Schnittstelle für intelligente Gespräche.",
+      "h1": "Passwort vergessen",
+      "email_placeholder": "E-Mail",
+      "btn": "Passwort-Reset zusenden"
+    },
+    "email_verifications": {
+      "entry": "E-Mail-Verifizierung",
+      "title": "E-Mail-Verifizierung",
+      "description": "ChatbotHub bietet eine benutzerfreundliche Online-Chat-Schnittstelle für intelligente Gespräche.",
+      "h1_account_confirm": "Konto-Verifikation",
+      "h1_reset_password": "Passwort zurücksetzen",
+      "p_account_confirm": "Bitte überprüfen Sie Ihr E-Mail-Postfach, um Ihr Konto zu bestätigen.",
+      "p_reset_password": "Bitte überprüfen Sie Ihr E-Mail-Postfach, um Ihr Passwort zurückzusetzen.",
+      "resend": "Erneut senden",
+      "check_email": "E-Mail überprüfen"
+    }
+  },
+  "payment": {
+    "credit": "Guthaben",
+    "payment_history": {
+      "entry": "Zahlungsverlauf",
+      "title": "Zahlungsverlauf",
+      "description": "ChatbotHub bietet eine benutzerfreundliche Online-Chat-Schnittstelle für intelligente Gespräche.",
+      "h1": "Zahlungsverlauf",
+      "loading": "Lädt...",
+      "total_label": "Gesamtbetrag:"
+    }
+  },
+  "need_credit_modal": {
+    "title": "Hinweis",
+    "content": "Sie haben nicht genügend Guthaben!",
+    "pay_btn": "Aufladen"
+  },
+  "usage": {
+    "entry": "Nutzung",
+    "title": "Nutzung",
+    "description": "ChatbotHub bietet eine benutzerfreundliche Online-Chat-Schnittstelle für intelligente Gespräche."
+  },
+  "settings": {
+    "entry": "Einstellungen",
+    "title": "Einstellungen",
+    "description": "ChatbotHub bietet eine benutzerfreundliche Online-Chat-Schnittstelle für intelligente Gespräche."
+  },
+  "slug": {
+    "page_not_found": "Seite nicht gefunden"
+  }
 }

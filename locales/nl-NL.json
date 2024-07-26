@@ -1,4 +1,157 @@
 {
-  "terms-of-service": "Dienstvoorwaarden",
-  "privacy-policy": "Privacybeleid"
+  "seo": {
+    "title": "ChatbotHub - Alles-in-een-chatbotclient",
+    "description":"Alles-in-een-chatbotclient, gebruik ChatGPT, Gemini, Claude, Bing Copilot en meer chatbots tegelijkertijd"
+  },
+  "index": {
+    "entry": "Home",
+    "title": "Alles-in-een-chatbotclient",
+    "description": "Alles-in-een-chatbotclient, gebruik ChatGPT, Gemini, Claude en meer chatbots tegelijkertijd",
+    "hero": {
+      "h1": {
+        "part1": "Het is jouw",
+        "part2": "alles-in-een",
+        "part3": "projectoplossing",
+      },
+      "note": "",
+      "get_start": "Begin"
+    },
+    "features": {
+      "title": "Maak elke stap gebruikersgericht",
+      "note": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim.",
+      "item1": "Ondersteuning",
+      "item1_note": "",
+      "item2": "Ondersteuning",
+      "item2_note": "",
+      "item3": "Ondersteuning",
+      "item3_note": ""
+    },
+    "call_to_action": {
+      "get_start": "Begin",
+      "get_start_note": "Geen creditcard vereist.",
+      "h2": "Razendsnel eenvoudig Webflow-ontwikkeling",
+      "h2_p": "14 dagen gratis proefperiode. Geen creditcard vereist."
+    }
+  },
+  "pricing": {
+    "entry": "Prijzen",
+    "title": "Prijzen",
+    "description": "ChatbotHub biedt een gebruiksvriendelijke online chatinterface voor intelligente gesprekken."
+  },
+  "faq": {
+    "entry": "FAQ",
+    "title": "Veelgestelde Vragen van ChatbotHub-gebruikers",
+    "description": "Veelgestelde Vragen van ChatbotHub-gebruikers"
+  },
+  "blog": {
+    "entry": "Blog",
+    "title": "Blog",
+    "description": "ChatbotHub biedt een gebruiksvriendelijke online chatinterface voor intelligente gesprekken.",
+    "no_article_found": "Geen artikelen gevonden.",
+    "h2": "Het laatste en allerbeste nieuws",
+    "h2_p": "",
+    "tag": "Hot",
+    "search_placeholder": "Zoeken..."
+  },
+  "header": {
+    "sign_in_as": "Ingelogd als"
+  },
+  "footer": {
+    "terms_of_service": "Servicevoorwaarden",
+    "privacy_policy": "Privacybeleid",
+    "support": "Ondersteuning",
+    "products": "Producten",
+    "friends": "Vrienden"
+  },
+  "auth": {
+    "signup": {
+      "entry": "Registreren",
+      "title": "Registreren",
+      "description": "ChatbotHub biedt een gebruiksvriendelijke online chatinterface voor intelligente gesprekken.",
+      "h1": "Aanmelden",
+      "h2": "Begin 14 dagen gratis proefperiode",
+      "h2_p": "14 dagen gratis proefperiode. Geen creditcard vereist.",
+      "sign_in_with_google": "Aanmelden met Google",
+      "sign_up_with_email": "of aanmelden met e-mail",
+      "already_have_an_account": "Heb je al een account?",
+      "email_placeholder": "E-mail",
+      "password_placeholder": "Wachtwoord (min. 8 tekens)",
+      "confirm_password_placeholder": "Wachtwoordbevestiging",
+      "sign_up": "Aanmelden"
+    },
+    "login": {
+      "entry": "Inloggen",
+      "title": "Inloggen",
+      "description": "ChatbotHub biedt een gebruiksvriendelijke online chatinterface voor intelligente gesprekken.",
+      "h1": "Inloggen",
+      "h2": "Begin 14 dagen gratis proefperiode",
+      "h2_p": "14 dagen gratis proefperiode. Geen creditcard vereist.",
+      "sign_in_with_google": "Inloggen met Google",
+      "sign_in_with_email": "of inloggen met e-mail",
+      "dont_have_an_account": "Heb je geen account?",
+      "email_placeholder": "E-mail",
+      "password_placeholder": "Wachtwoord",
+      "sign_in": "Inloggen"
+    },
+    "sign_out": {
+      "entry": "Uitloggen"
+    },
+    "password_reset": {
+      "entry": "Wachtwoord Herstellen",
+      "title": "Wachtwoord Herstellen",
+      "description": "ChatbotHub biedt een gebruiksvriendelijke online chatinterface voor intelligente gesprekken.",
+      "h1": "Wachtwoord Herstellen",
+      "password_placeholder": "Wachtwoord",
+      "password_confirmation_placeholder": "Wachtwoordbevestiging",
+      "password_reset_btn": "Wachtwoordherstel Verzenden"
+    },
+    "forgot_password": {
+      "entry": "Wachtwoord vergeten?",
+      "title": "Wachtwoord Vergeten",
+      "description": "ChatbotHub biedt een gebruiksvriendelijke online chatinterface voor intelligente gesprekken.",
+      "h1": "Wachtwoord Vergeten",
+      "email_placeholder": "E-mail",
+      "btn": "Wachtwoordherstel Verzenden"
+    },
+    "email_verifications": {
+      "entry": "E-mailverificaties",
+      "title": "E-mailverificaties",
+      "description": "ChatbotHub biedt een gebruiksvriendelijke online chatinterface voor intelligente gesprekken.",
+      "h1_account_confirm": "Accountverificaties",
+      "h1_reset_password": "Wachtwoord Herstellen",
+      "p_account_confirm": "Controleer je e-mail om je account te bevestigen.",
+      "p_reset_password": "Controleer je e-mail om je wachtwoord te herstellen.",
+      "resend": "Opnieuw Verzenden",
+      "check_email": "Controleer je e-mail"
+    }
+  },
+  "payment": {
+    "credit": "Krediet",
+    "payment_history": {
+      "entry": "Betalingsgeschiedenis",
+      "title": "Betalingsgeschiedenis",
+      "description": "ChatbotHub biedt een gebruiksvriendelijke online chatinterface voor intelligente gesprekken.",
+      "h1": "Betalingsgeschiedenis",
+      "loading": "Laden...",
+      "total_label": "Totaal:"
+    }
+  },
+  "need_credit_modal": {
+    "title": "Tip",
+    "content": "Je hebt niet genoeg krediet!",
+    "pay_btn": "Laad op"
+  },
+  "usage": {
+    "entry": "Gebruik",
+    "title": "Gebruik",
+    "description": "ChatbotHub biedt een gebruiksvriendelijke online chatinterface voor intelligente gesprekken."
+  },
+  "settings": {
+    "entry": "Instellingen",
+    "title": "Instellingen",
+    "description": "ChatbotHub biedt een gebruiksvriendelijke online chatinterface voor intelligente gesprekken."
+  },
+  "slug": {
+    "page_not_found": "Pagina niet gevonden"
+  }
 }

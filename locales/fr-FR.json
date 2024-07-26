@@ -1,4 +1,157 @@
 {
-  "terms-of-service": "Conditions d'Utilisation",
-  "privacy-policy": "Politique de Confidentialité"
+  "seo": {
+    "title": "ChatbotHub - Client tout-en-un pour chatbots",
+    "description": "Client tout-en-un pour chatbots, utilisez ChatGPT, Gemini, Claude, Bing Copilote et plus encore simultanément"
+  },
+  "index": {
+    "entry": "Accueil",
+    "title": "Client tout-en-un pour chatbots",
+    "description": "Client tout-en-un pour chatbots, utilisez simultanément ChatGPT, Gemini, Claude et d'autres chatbots",
+    "hero": {
+      "h1": {
+        "part1": "C'est votre",
+        "part2": "solution",
+        "part3": "tout-en-un pour vos projets",
+      },
+      "note": "111",
+      "get_start": "Commencez"
+    },
+    "features": {
+      "title": "Placez l'utilisateur au cœur de chaque étape",
+      "note": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim.",
+      "item1": "Assistance",
+      "item1_note": "note111",
+      "item2": "Assistance",
+      "item2_note": "note111",
+      "item3": "Assistance",
+      "item3_engage": "note111"
+    },
+    "call_to_action": {
+      "get_start": "Commencez",
+      "get_start_note": "Pas besoin de carte de crédit.",
+      "h2": "Développement Webflow ultra rapide et facilité",
+      "h2_p": "Essai de 14 jours gratuit. Pas besoin de carte de crédit."
+    }
+  },
+  "pricing": {
+    "entry": "Tarifs",
+    "title": "Tarifs",
+    "description": "ChatbotHub propose une interface de chat en ligne conviviale pour des conversations intelligentes."
+  },
+  "faq": {
+    "entry": "FAQ",
+    "title": "FAQ",
+    "description": "FAQ des utilisateurs de ChatbotHub"
+  },
+  "blog": {
+    "entry": "Blog",
+    "title": "Blog",
+    "description": "ChatbotHub propose une interface de chat en ligne conviviale pour des conversations intelligentes.",
+    "no_article_found": "Aucun article trouvé.",
+    "h2": "Les dernières et plus importantes nouvelles",
+    "h2_p": "",
+    "tag": "À la une",
+    "search_placeholder": "Recherche..."
+  },
+  "header": {
+    "sign_in_as": "Connecté en tant que"
+  },
+  "footer": {
+    "terms_of_service": "Conditions d'utilisation",
+    "privacy_policy": "Politique de confidentialité",
+    "support": "Assistance",
+    "products": "Nos produits",
+    "friends": "Amis"
+  },
+  "auth": {
+    "signup": {
+      "entry": "Inscription",
+      "title": "Inscription",
+      "description": "ChatbotHub propose une interface de chat en ligne conviviale pour des conversations intelligentes.",
+      "h1": "Inscription",
+      "h2": "Démarrez votre essai gratuit de 14 jours",
+      "h2_p": "Essai de 14 jours gratuit. Pas besoin de carte de crédit.",
+      "sign_in_with_google": "S'inscrire avec Google",
+      "sign_up_with_email": "ou inscrivez-vous avec un e-mail",
+      "already_have_an_account": "Vous avez déjà un compte ? ",
+      "email_placeholder": "E-mail",
+      "password_placeholder": "Mot de passe (min 8 caractères)",
+      "confirm_password_placeholder": "Confirmation du mot de passe",
+      "sign_up": "S'inscrire"
+    },
+    "login": {
+      "entry": "Connexion",
+      "title": "Connexion",
+      "description": "ChatbotHub propose une interface de chat en ligne conviviale pour des conversations intelligentes.",
+      "h1": "Connexion",
+      "h2": "Démarrez votre essai gratuit de 14 jours",
+      "h2_p": "Essai de 14 jours gratuit. Pas besoin de carte de crédit.",
+      "sign_in_with_google": "Se connecter avec Google",
+      "sign_in_with_email": "ou connectez-vous avec un e-mail",
+      "dont_have_an_account": "Vous n'avez pas de compte ?",
+      "email_placeholder": "E-mail",
+      "password_placeholder": "Mot de passe",
+      "sign_in": "Se connecter"
+    },
+    "sign_out": {
+      "entry": "Déconnexion"
+    },
+    "password_reset": {
+      "entry": "Réinitialisation de mot de passe",
+      "title": "Réinitialisation de mot de passe",
+      "description": "ChatbotHub propose une interface de chat en ligne conviviale pour des conversations intelligentes.",
+      "h1": "Réinitialisation de mot de passe",
+      "password_placeholder": "Nouveau mot de passe",
+      "password_confirmation_placeholder": "Confirmation du nouveau mot de passe",
+      "password_reset_btn": "Envoyer le lien de réinitialisation du mot de passe"
+    },
+    "forgot_password": {
+      "entry": "Mot de passe oublié ?",
+      "title": "Mot de passe oublié",
+      "description": "ChatbotHub propose une interface de chat en ligne conviviale pour des conversations intelligentes.",
+      "h1": "Mot de passe oublié",
+      "email_placeholder": "E-mail",
+      "btn": "Envoyer le lien de réinitialisation du mot de passe"
+    },
+    "email_verifications": {
+      "entry": "Vérifications d'Email",
+      "title": "Vérifications d'Email",
+      "description": "ChatbotHub propose une interface de chat en ligne conviviale pour des conversations intelligentes.",
+      "h1_account_confirm": "Vérification de Compte",
+      "h1_reset_password": "Réinitialiser le mot de passe",
+      "p_account_confirm": "Veuillez vérifier votre e-mail pour confirmer votre compte.",
+      "p_reset_password": "Veuillez vérifier votre e-mail pour réinitialiser votre mot de passe.",
+      "resend": "Renvoyer",
+      "check_email": "Consultez votre e-mail"
+    }
+  },
+  "payment": {
+    "credit": "crédit",
+    "payment_history": {
+      "entry": "Historique des paiements",
+      "title": "Historique des paiements",
+      "description": "ChatbotHub propose une interface de chat en ligne conviviale pour des conversations intelligentes.",
+      "h1": "Historique des paiements",
+      "loading": "Chargement en cours...",
+      "total_label": "Total :"
+    }
+  },
+  "need_credit_modal": {
+    "title": "Astuce",
+    "content": "Vous n'avez pas assez de crédit !",
+    "pay_btn": "Recharger"
+  },
+  "usage": {
+    "entry": "Utilisation",
+    "title": "Utilisation",
+    "description": "ChatbotHub propose une interface de chat en ligne conviviale pour des conversations intelligentes."
+  },
+  "settings": {
+    "entry": "Réglages",
+    "title": "Réglages",
+    "description": "ChatbotHub propose une interface de chat en ligne conviviale pour des conversations intelligentes."
+  },
+  "slug": {
+    "page_not_found": "Page non trouvée"
+  }
 }

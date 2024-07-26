@@ -1,4 +1,157 @@
 {
-  "terms-of-service": "서비스 약관",
-  "privacy-policy": "개인정보 처리방침"
+  "seo": {
+    "title": "ChatbotHub - 다기능 통합 챗봇 클라이언트",
+    "description":"다기능 통합 챗봇 클라이언트로서, ChatGPT, Gemini, Claude, Bing Copilot 등 여러 챗봇을 한 번에 사용하세요"
+  },
+  "index": {
+    "entry": "홈",
+    "title": "다기능 통합 챗봇 클라이언트",
+    "description": "다기능 통합 챗봇 클라이언트로서, ChatGPT, Gemini, Claude 등을 동시에 사용해보세요",
+    "hero": {
+      "h1": {
+        "part1": "당신의",
+        "part2": "다기능",
+        "part3": "프로젝트 솔루션입니다",
+      },
+      "note": "111",
+      "get_start": "시작하기"
+    },
+    "features": {
+      "title": "모든 단계를 사용자 중심적으로 구성하세요",
+      "note": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim.",
+      "item1": "지원",
+      "item1_note": "노트111",
+      "item2": "지원",
+      "item2_note": "노트111",
+      "item3": "지원",
+      "item3_note": "노트111"
+    },
+    "call_to_action": {
+      "get_start": "시작하기",
+      "get_start_note": "신용카드가 필요하지 않습니다.",
+      "h2": "번개처럼 빠른 웹플로우 개발을 손쉽게",
+      "h2_p": "14일 무료 체험. 신용카드가 필요하지 않습니다."
+    }
+  },
+  "pricing": {
+    "entry": "가격",
+    "title": "가격",
+    "description": "ChatbotHub는 지능적 대화를 위한 사용자 친화적인 온라인 채팅 인터페이스를 제공합니다."
+  },
+  "faq": {
+    "entry": "FAQ",
+    "title": "FAQ",
+    "description": "ChatbotHub 사용자 FAQ"
+  },
+  "blog": {
+    "entry": "블로그",
+    "title": "블로그",
+    "description": "ChatbotHub는 지능적 대화를 위한 사용자 친화적인 온라인 채팅 인터페이스를 제공합니다.",
+    "no_article_found": "글이 없습니다.",
+    "h2": "최신뉴스",
+    "h2_p": "",
+    "tag": "인기",
+    "search_placeholder": "검색..."
+  },
+  "header": {
+    "sign_in_as": "로그인 계정:"
+  },
+  "footer": {
+    "terms_of_service": "서비스 약관",
+    "privacy_policy": "개인정보 처리방침",
+    "support": "지원",
+    "products": "제품",
+    "friends": "친구들"
+  },
+  "auth": {
+    "signup": {
+      "entry": "회원가입",
+      "title": "회원가입",
+      "description": "ChatbotHub는 지능적 대화를 위한 사용자 친화적인 온라인 채팅 인터페이스를 제공합니다.",
+      "h1": "회원가입",
+      "h2": "14일 무료 체험 시작하기",
+      "h2_p": "14일 무료 체험. 신용카드가 필요하지 않습니다.",
+      "sign_in_with_google": "구글로 가입하기",
+      "sign_up_with_email": "또는 이메일로 가입하기",
+      "already_have_an_account": "이미 계정이 있으신가요? ",
+      "email_placeholder": "이메일",
+      "password_placeholder": "비밀번호 (최소 8자)",
+      "confirm_password_placeholder": "비밀번호 확인",
+      "sign_up": "가입하기"
+    },
+    "login": {
+      "entry": "로그인",
+      "title": "로그인",
+      "description": "ChatbotHub는 지능적 대화를 위한 사용자 친화적인 온라인 채팅 인터페이스를 제공합니다.",
+      "h1": "로그인",
+      "h2": "14일 무료 체험 시작하기",
+      "h2_p": "14일 무료 체험. 신용카드가 필요하지 않습니다.",
+      "sign_in_with_google": "구글로 가입하기",
+      "sign_in_with_email": "또는 이메일로 로그인하기",
+      "dont_have_an_account": "계정이 없으신가요?",
+      "email_placeholder": "이메일",
+      "password_placeholder": "비밀번호",
+      "sign_in": "로그인"
+    },
+    "sign_out": {
+      "entry": "로그아웃"
+    },
+    "password_reset": {
+      "entry": "비밀번호 재설정",
+      "title": "비밀번호 재설정",
+      "description": "ChatbotHub는 지능적 대화를 위한 사용자 친화적인 온라인 채팅 인터페이스를 제공합니다.",
+      "h1": "비밀번호 재설정",
+      "password_placeholder": "비밀번호",
+      "password_confirmation_placeholder": "비밀번호 확인",
+      "password_reset_btn": "비밀번호 재설정 링크 보내기"
+    },
+    "forgot_password": {
+      "entry": "비밀번호를 잊으셨나요?",
+      "title": "비밀번호 찾기",
+      "description": "ChatbotHub는 지능적 대화를 위한 사용자 친화적인 온라인 채팅 인터페이스를 제공합니다.",
+      "h1": "비밀번호 찾기",
+      "email_placeholder": "이메일",
+      "btn": "비밀번호 재설정 링크 보내기"
+    },
+    "email_verifications": {
+      "entry": "이메일 인증",
+      "title": "이메일 인증",
+      "description": "ChatbotHub는 지능적 대화를 위한 사용자 친화적인 온라인 채팅 인터페이스를 제공합니다.",
+      "h1_account_confirm": "계정 인증",
+      "h1_reset_password": "비밀번호 재설정",
+      "p_account_confirm": "계정 확인을 위해 이메일을 확인해 주세요.",
+      "p_reset_password": "비밀번호 재설정을 위해 이메일을 확인해 주세요.",
+      "resend": "다시 보내기",
+      "check_email": "이메일 확인하기"
+    }
+  },
+  "payment": {
+    "credit": "크레딧",
+    "payment_history": {
+      "entry": "결제 내역",
+      "title": "결제 내역",
+      "description": "ChatbotHub는 지능적 대화를 위한 사용자 친화적인 온라인 채팅 인터페이스를 제공합니다.",
+      "h1": "결제 내역",
+      "loading": "로딩 중...",
+      "total_label": "총:"
+    }
+  },
+  "need_credit_modal": {
+    "title": "팁",
+    "content": "크레딧이 부족합니다!",
+    "pay_btn": "충전하기"
+  },
+  "usage": {
+    "entry": "사용량",
+    "title": "사용량",
+    "description": "ChatbotHub는 지능적 대화를 위한 사용자 친화적인 온라인 채팅 인터페이스를 제공합니다."
+  },
+  "settings": {
+    "entry": "설정",
+    "title": "설정",
+    "description": "ChatbotHub는 지능적 대화를 위한 사용자 친화적인 온라인 채팅 인터페이스를 제공합니다."
+  },
+  "slug": {
+    "page_not_found": "페이지를 찾을 수 없습니다"
+  }
 }

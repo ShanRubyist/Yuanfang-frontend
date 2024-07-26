@@ -1,13 +1,157 @@
 {
   "seo": {
-    "title": "在线摩尔斯电码翻译器、解码器、生成器及转换器",
-    "description": "摩尔斯电码翻译器是一个能将摩尔斯电码翻译为文本或将文本翻译为摩尔斯电码的解码器、生成器、转换器。"
+    "title": "ChatbotHub - 全能型聊天机器人客户端",
+    "description":"全能型聊天机器人客户端，同时使用ChatGPT、Gemini、Claude、Bing Copilot等多款聊天机器人"
   },
-
-  "credit": "信用",
-
+  "index": {
+    "entry": "首页",
+    "title": "全能型聊天机器人客户端",
+    "description": "全能型聊天机器人客户端，同时使用ChatGPT、Gemini、Claude等多款聊天机器人",
+    "hero": {
+      "h1": {
+        "part1": "这是你的",
+        "part2": "全方位",
+        "part3": "项目解决方案",
+      },
+      "note": "[请在此处插入相关说明]",
+      "get_start": "立即开始"
+    },
+    "features": {
+      "title": "让每一步都以用户为中心",
+      "note": "[请插入相应的中文占位符或向客户询问具体内容]",
+      "item1": "支持",
+      "item1_note": "[请在此处插入相关说明]",
+      "item2": "支持",
+      "item2_note": "[请在此处插入相关说明]",
+      "item3": "支持",
+      "item3_note": "[请在此处插入相关说明]"
+    },
+    "call_to_action": {
+      "get_start": "立即开始",
+      "get_start_note": "无需信用卡，免费试用14天。",
+      "h2": "轻松打造极速Webflow开发",
+      "h2_p": "无需信用卡，免费试用14天。"
+    }
+  },
+  "pricing": {
+    "entry": "价格",
+    "title": "价格",
+    "description": "ChatbotHub提供了一个友好的在线聊天界面用于智能交流。"
+  },
+  "faq": {
+    "entry": "常见问题",
+    "title": "常见问题",
+    "description": "ChatbotHub用户常见问题"
+  },
+  "blog": {
+    "entry": "博客",
+    "title": "博客",
+    "description": "ChatbotHub提供了一个友好的在线聊天界面用于智能交流。",
+    "no_article_found": "没有找到文章。",
+    "h2": "最新最热的消息",
+    "h2_p": "",
+    "tag": "热门",
+    "search_placeholder": "搜索..."
+  },
   "header": {
     "sign_in_as": "已登录为"
   },
-  "pay_btn": "支付费用"
+  "footer": {
+    "terms_of_service": "服务条款",
+    "privacy_policy": "隐私政策",
+    "support": "支持",
+    "products": "产品中心",
+    "friends": "友情链接"
+  },
+  "auth": {
+    "signup": {
+      "entry": "注册",
+      "title": "注册",
+      "description": "ChatbotHub提供了一个友好的在线聊天界面用于智能交流。",
+      "h1": "注册",
+      "h2": "开始14天免费试用",
+      "h2_p": "无需信用卡，免费试用14天。",
+      "sign_in_with_google": "通过Google注册",
+      "sign_up_with_email": "或者通过邮箱注册",
+      "already_have_an_account": "已经有账号了？ ",
+      "email_placeholder": "邮箱",
+      "password_placeholder": "密码（至少8个字符）",
+      "confirm_password_placeholder": "确认密码",
+      "sign_up": "注册"
+    },
+    "login": {
+      "entry": "登录",
+      "title": "登录",
+      "description": "ChatbotHub提供了一个友好的在线聊天界面用于智能交流。",
+      "h1": "登录",
+      "h2": "开始14天免费试用",
+      "h2_p": "无需信用卡，免费试用14天。",
+      "sign_in_with_google": "通过Google登录",
+      "sign_in_with_email": "或者通过邮箱登录",
+      "dont_have_an_account": "没有账号？",
+      "email_placeholder": "邮箱",
+      "password_placeholder": "密码",
+      "sign_in": "登录"
+    },
+    "sign_out": {
+      "entry": "退出登录"
+    },
+    "password_reset": {
+      "entry": "密码重置",
+      "title": "密码重置",
+      "description": "ChatbotHub提供了一个友好的在线聊天界面用于智能交流。",
+      "h1": "密码重置",
+      "password_placeholder": "密码",
+      "password_confirmation_placeholder": "确认密码",
+      "password_reset_btn": "发送密码重置链接"
+    },
+    "forgot_password": {
+      "entry": "忘记密码？",
+      "title": "忘记密码",
+      "description": "ChatbotHub提供了一个友好的在线聊天界面用于智能交流。",
+      "h1": "忘记密码",
+      "email_placeholder": "邮箱",
+      "btn": "发送密码重置链接"
+    },
+    "email_verifications": {
+      "entry": "邮箱验证",
+      "title": "邮箱验证",
+      "description": "ChatbotHub提供了一个友好的在线聊天界面用于智能交流。",
+      "h1_account_confirm": "账号验证",
+      "h1_reset_password": "重置密码",
+      "p_account_confirm": "请检查您的邮箱以确认您的账户。",
+      "p_reset_password": "请检查您的邮箱以重置您的密码。",
+      "resend": "重新发送",
+      "check_email": "查看邮箱"
+    }
+  },
+  "payment": {
+    "credit": "可用额度",
+    "payment_history": {
+      "entry": "支付历史",
+      "title": "支付历史",
+      "description": "ChatbotHub提供了一个友好的在线聊天界面用于智能交流。",
+      "h1": "支付历史",
+      "loading": "正在加载...",
+      "total_label": "总计费用："
+    }
+  },
+  "need_credit_modal": {
+    "title": "提示",
+    "content": "您的信用额度不足！",
+    "pay_btn": "充值"
+  },
+  "usage": {
+    "entry": "使用情况",
+    "title": "使用情况",
+    "description": "ChatbotHub提供了一个友好的在线聊天界面用于智能交流。"
+  },
+  "settings": {
+    "entry": "设置",
+    "title": "设置",
+    "description": "ChatbotHub提供了一个友好的在线聊天界面用于智能交流。"
+  },
+  "slug": {
+    "page_not_found": "哎呀，页面去哪儿了？"
+  }
 }

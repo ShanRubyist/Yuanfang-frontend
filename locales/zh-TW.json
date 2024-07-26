@@ -1,4 +1,157 @@
 {
-  "terms-of-service": "服務條款",
-  "privacy-policy": "隱私政策"
+  "seo": {
+    "title": "ChatbotHub - 多合一聊天機器人客戶端",
+    "description":"多合一聊天機器人客戶端，一次性使用ChatGPT、Gemini、Claude、Bing Copilot等多個聊天機器人"
+  },
+  "index": {
+    "entry": "首頁",
+    "title": "多合一聊天機器人客戶端",
+    "description": "多合一聊天機器人客戶端，同時使用ChatGPT、Gemini、Claude等聊天機器人",
+    "hero": {
+      "h1": {
+        "part1": "它是您完美的",
+        "part2": "全能",
+        "part3": "項目解決方案",
+      },
+      "note": "111",
+      "get_start": "立即開始"
+    },
+    "features": {
+      "title": "讓每一步都以用戶為核心",
+      "note": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim.",
+      "item1": "支持",
+      "item1_note": "note111",
+      "item2": "支持",
+      "item2_note": "note111",
+      "item3": "支持",
+      "item3_note": "note111"
+    },
+    "call_to_action": {
+      "get_start": "立即開始",
+      "get_start_note": "不需使用信用卡。",
+      "h2": "極速簡易的Webflow開發體驗",
+      "h2_p": "14天免費試用，不需使用信用卡。"
+    }
+  },
+  "pricing": {
+    "entry": "價格",
+    "title": "價格",
+    "description": "ChatbotHub提供友好的在線聊天界面，讓智能對話觸手可及。"
+  },
+  "faq": {
+    "entry": "常見問題解答",
+    "title": "常見問題解答",
+    "description": "ChatbotHub用戶常見問答"
+  },
+  "blog": {
+    "entry": "博客",
+    "title": "博客",
+    "description": "ChatbotHub提供友好的在線聊天界面，讓智能對話觸手可及。",
+    "no_article_found": "未找到文章。",
+    "h2": "最新最熱的新聞",
+    "h2_p": "",
+    "tag": "熱門",
+    "search_placeholder": "搜尋..."
+  },
+  "header": {
+    "sign_in_as": "已登入為"
+  },
+  "footer": {
+    "terms_of_service": "服務條款",
+    "privacy_policy": "隱私政策",
+    "support": "支援",
+    "products": "產品",
+    "friends": "朋友"
+  },
+  "auth": {
+    "signup": {
+      "entry": "註冊",
+      "title": "註冊",
+      "description": "ChatbotHub提供友好的在線聊天界面，讓智能對話觸手可及。",
+      "h1": "註冊",
+      "h2": "開始14天免費試用",
+      "h2_p": "14天免費試用，不需使用信用卡。",
+      "sign_in_with_google": "透過Google註冊",
+      "sign_up_with_email": "或者用電郵註冊",
+      "already_have_an_account": "已經有賬戶了嗎？",
+      "email_placeholder": "電子郵件",
+      "password_placeholder": "密碼（至少8個字符）",
+      "confirm_password_placeholder": "確認密碼",
+      "sign_up": "註冊"
+    },
+    "login": {
+      "entry": "登入",
+      "title": "登入",
+      "description": "ChatbotHub提供友好的在線聊天界面，讓智能對話觸手可及。",
+      "h1": "登入",
+      "h2": "開始14天免費體驗",
+      "h2_p": "14天免費試用，不需使用信用卡。",
+      "sign_in_with_google": "透過Google登入",
+      "sign_in_with_email": "或者用電郵登入",
+      "dont_have_an_account": "還沒有賬戶？",
+      "email_placeholder": "電子郵件",
+      "password_placeholder": "密碼",
+      "sign_in": "登入"
+    },
+    "sign_out": {
+      "entry": "登出"
+    },
+    "password_reset": {
+      "entry": "重設密碼",
+      "title": "重設密碼",
+      "description": "ChatbotHub提供友好的在線聊天界面，讓智能對話觸手可及。",
+      "h1": "重設密碼",
+      "password_placeholder": "密碼",
+      "password_confirmation_placeholder": "確認密碼",
+      "password_reset_btn": "發送重設密碼電郵"
+    },
+    "forgot_password": {
+      "entry": "忘記密碼？",
+      "title": "忘記密碼",
+      "description": "ChatbotHub提供友好的在線聊天界面，讓智能對話觸手可及。",
+      "h1": "忘記密碼",
+      "email_placeholder": "電子郵件",
+      "btn": "發送重設密碼電郵"
+    },
+    "email_verifications": {
+      "entry": "電子郵件驗證",
+      "title": "電子郵件驗證",
+      "description": "ChatbotHub提供友好的在線聊天界面，讓智能對話觸手可及。",
+      "h1_account_confirm": "賬戶驗證",
+      "h1_reset_password": "重設密碼",
+      "p_account_confirm": "請檢查您的電子郵件來確認您的賬戶。",
+      "p_reset_password": "請檢查您的電子郵件來重設您的密碼。",
+      "resend": "重新發送",
+      "check_email": "查看您的電子郵件"
+    }
+  },
+  "payment": {
+    "credit": "點數",
+    "payment_history": {
+      "entry": "支付記錄",
+      "title": "支付記錄",
+      "description": "ChatbotHub提供友好的在線聊天界面，讓智能對話觸手可及。",
+      "h1": "支付記錄",
+      "loading": "正在加載...",
+      "total_label": "總計："
+    }
+  },
+  "need_credit_modal": {
+    "title": "提示",
+    "content": "您的點敲不足！",
+    "pay_btn": "立即充值"
+  },
+  "usage": {
+    "entry": "使用量",
+    "title": "使用量",
+    "description": "ChatbotHub提供友好的在線聊天界面，讓智能對話觸手可及。"
+  },
+  "settings": {
+    "entry": "設定",
+    "title": "設定",
+    "description": "ChatbotHub提供友好的在線聊天界面，讓智能對話觸手可及。"
+  },
+  "slug": {
+    "page_not_found": "找不到該頁面"
+  }
 }

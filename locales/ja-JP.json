@@ -1,4 +1,157 @@
 {
-  "terms-of-service": "利用規約",
-  "privacy-policy": "プライバシーポリシー"
+  "seo": {
+    "title": "ChatbotHub - オールインワンのチャットボットクライアント",
+    "description": "オールインワンのチャットボットクライアント、ChatGPT、Gemini、Claude、Bing Copilotなど複数のチャットボットを同時に使用"
+  },
+  "index": {
+    "entry": "ホーム",
+    "title": "オールインワンのチャットボットクライアント",
+    "description": "オールインワンのチャットボットクライアント、ChatGPT、Gemini、Claudeなどのチャットボットを同時に使用",
+    "hero": {
+      "h1": {
+        "part1": "あなたのための",
+        "part2": "オールインワン・",
+        "part3": "プロジェクトソリューションです"
+      },
+      "note": "",
+      "get_start": "始める"
+    },
+    "features": {
+      "title": "すべてのステップをユーザー中心に",
+      "note": "",
+      "item1": "サポート",
+      "item1_note": "",
+      "item2": "サポート",
+      "item2_note": "",
+      "item3": "サポート",
+      "item3_note": ""
+    },
+    "call_to_action": {
+      "get_start": "始める",
+      "get_start_note": "クレジットカードは不要です。",
+      "h2": "簡単なWebflow開発を驚くほど簡単かつ迅速に",
+      "h2_p": "14日間の無料トライアル。クレジットカードは不要です。"
+    }
+  },
+  "pricing": {
+    "entry": "価格",
+    "title": "価格",
+    "description": "ChatbotHubはインテリジェントな会話用のユーザーフレンドリーなオンラインチャットインターフェースを提供しています。"
+  },
+  "faq": {
+    "entry": "よくある質問",
+    "title": "FAQ",
+    "description": "ChatbotHubのユーザーFAQ"
+  },
+  "blog": {
+    "entry": "ブログ",
+    "title": "ブログ",
+    "description": "ChatbotHubはインテリジェントな会話用のユーザーフレンドリーなオンラインチャットインターフェースを提供しています。",
+    "no_article_found": "記事は見つかりませんでした。",
+    "h2": "最新かつ最高のニュース",
+    "h2_p": "",
+    "tag": "注目",
+    "search_placeholder": "検索..."
+  },
+  "header": {
+    "sign_in_as": "次でログイン："
+  },
+  "footer": {
+    "terms_of_service": "利用規約",
+    "privacy_policy": "プライバシーポリシー",
+    "support": "サポート",
+    "products": "製品",
+    "friends": "友達"
+  },
+  "auth": {
+    "signup": {
+      "entry": "登録する",
+      "title": "登録する",
+      "description": "ChatbotHubはインテリジェントな会話用のユーザーフレンドリーなオンラインチャットインターフェースを提供しています。",
+      "h1": "登録する",
+      "h2": "14日間の無料トライアルを始める",
+      "h2_p": "14日間の無料トライアル。クレジットカードは不要です。",
+      "sign_in_with_google": "Googleで登録する",
+      "sign_up_with_email": "またはメールアドレスで登録する",
+      "already_have_an_account": "すでにアカウントをお持ちですか？",
+      "email_placeholder": "メールアドレス",
+      "password_placeholder": "パスワード（最低8文字）",
+      "confirm_password_placeholder": "パスワードの確認",
+      "sign_up": "登録する"
+    },
+    "login": {
+      "entry": "サインイン",
+      "title": "サインイン",
+      "description": "ChatbotHubはインテリジェントな会話用のユーザーフレンドリーなオンラインチャットインターフェースを提供しています。",
+      "h1": "ログイン",
+      "h2": "14日間の無料トライアルを始める",
+      "h2_p": "14日間の無料トライアル。クレジットカードは不要です。",
+      "sign_in_with_google": "Googleでサインアップする",
+      "sign_in_with_email": "またはメールアドレスでサインインする",
+      "dont_have_an_account": "アカウントをお持ちでないですか？",
+      "email_placeholder": "メールアドレス",
+      "password_placeholder": "パスワード",
+      "sign_in": "サインイン"
+    },
+    "sign_out": {
+      "entry": "サインアウト"
+    },
+    "password_reset": {
+      "entry": "パスワードリセット",
+      "title": "パスワードリセット",
+      "description": "ChatbotHubはインテリジェントな会話用のユーザーフレンドリーなオンラインチャットインターフェースを提供しています。",
+      "h1": "パスワードリセット",
+      "password_placeholder": "新しいパスワード",
+      "password_confirmation_placeholder": "新しいパスワードの確認",
+      "password_reset_btn": "パスワードリセットを送信"
+    },
+    "forgot_password": {
+      "entry": "パスワードをお忘れですか？",
+      "title": "パスワードをお忘れの場合",
+      "description": "ChatbotHubはインテリジェントな会話用のユーザーフレンドリーなオンラインチャットインターフェースを提供しています。",
+      "h1": "パスワードをお忘れの場合",
+      "email_placeholder": "メールアドレス",
+      "btn": "パスワードリセットを送信する"
+    },
+    "email_verifications": {
+      "entry": "メール認証",
+      "title": "メール認証",
+      "description": "ChatbotHubはインテリジェントな会話用のユーザーフレンドリーなオンラインチャットインターフェースを提供しています。",
+      "h1_account_confirm": "アカウント認証",
+      "h1_reset_password": "パスワードリセット",
+      "p_account_confirm": "アカウントを認証するためメールを確認してください。",
+      "p_reset_password": "パスワードをリセットするためメールを確認してください。",
+      "resend": "メールを再送する",
+      "check_email": "メールを確認する"
+    }
+  },
+  "payment": {
+    "credit": "クレジット",
+    "payment_history": {
+      "entry": "支払い履歴",
+      "title": "支払い履歴",
+      "description": "ChatbotHubはインテリジェントな会話用のユーザーフレンドリーなオンラインチャットインターフェースを提供しています。",
+      "h1": "支払い履歴",
+      "loading": "読み込み中...",
+      "total_label": "合計："
+    }
+  },
+  "need_credit_modal": {
+    "title": "ヒント",
+    "content": "クレジットが不足しています！",
+    "pay_btn": "チャージ"
+  },
+  "usage": {
+    "entry": "使用状況",
+    "title": "使用状況",
+    "description": "ChatbotHubはインテリジェントな会話用のユーザーフレンドリーなオンラインチャットインターフェースを提供しています。"
+  },
+  "settings": {
+    "entry": "設定",
+    "title": "設定",
+    "description": "ChatbotHubはインテリジェントな会話用のユーザーフレンドリーなオンラインチャットインターフェースを提供しています。"
+  },
+  "slug": {
+    "page_not_found": "ページが見つかりません"
+  }
 }

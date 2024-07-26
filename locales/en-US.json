@@ -1,12 +1,12 @@
 {
   "seo": {
-    "title": "Online Morse Code Translator, Decoder, Generator, Converter",
-    "description":"Morse Code Translator is a Morse Code Decoder, Generator, Converter to translate Morse Code to text, or translate text to Morse Code."
+    "title": "ChatbotHub - All-in-one chatbot client",
+    "description":"All-in-one chatbot client, use ChatGPT, Gemini, Claude, Bing Copilot and more chatbots simultaneously"
   },
   "index": {
     "entry": "Home",
-    "title": "a good app",
-    "description": "this is a good app",
+    "title": "All-in-one chatbot client",
+    "description": "All-in-one chatbot client, use ChatGPT, Gemini, Claude and more chatbots simultaneously",
     "hero": {
       "h1": {
         "part1": "It's your",
@@ -35,18 +35,18 @@
   },
   "pricing": {
     "entry": "Pricing",
-    "title": "a good app",
-    "description": "this is a good app"
+    "title": "Pricing",
+    "description": "ChatbotHub offers a user-friendly online chat interface for intelligent conversations."
   },
   "faq": {
     "entry": "FAQ",
-    "title": "a good app",
-    "description": "this is a good app"
+    "title": "FAQ",
+    "description": "ChatbotHub user FAQ"
   },
   "blog": {
     "entry": "Blog",
-    "title": "a good app",
-    "description": "this is a good app",
+    "title": "Blog",
+    "description": "ChatbotHub offers a user-friendly online chat interface for intelligent conversations.",
     "no_article_found": "No articles found.",
     "h2": "The latest and greatest news",
     "h2_p": "Lorem ipsum dolor sit amet elit ut aliquam",
@@ -66,10 +66,10 @@
   "auth": {
     "signup": {
       "entry": "Sign up",
-      "title": "a good app",
-      "description": "this is a good app",
+      "title": "Sign up",
+      "description": "ChatbotHub offers a user-friendly online chat interface for intelligent conversations.",
       "h1": "Sign Up",
-      "h2": "Start 14_day free trial",
+      "h2": "Start 14 day free trial",
       "h2_p": "14 day free trial. No credit card required.",
       "sign_in_with_google": "Sign up with Google",
       "sign_up_with_email": "or sign up with email",
@@ -81,8 +81,8 @@
     },
     "login": {
       "entry": "Sign in",
-      "title": "a good app",
-      "description": "this is a good app",
+      "title": "Sign in",
+      "description": "ChatbotHub offers a user-friendly online chat interface for intelligent conversations.",
       "h1": "Login",
       "h2": "Start 14_day free trial",
       "h2_p": "14 day free trial. No credit card required.",
@@ -98,8 +98,8 @@
     },
     "password_reset": {
       "entry": "Password Reset",
-      "title": "a good app",
-      "description": "this is a good app",
+      "title": "Password Reset",
+      "description": "ChatbotHub offers a user-friendly online chat interface for intelligent conversations.",
       "h1": "Password Reset",
       "password_placeholder": "Password",
       "password_confirmation_placeholder": "Password Confirmation",
@@ -107,16 +107,16 @@
     },
     "forgot_password": {
       "entry": "Forgot password?",
-      "title": "a good app",
-      "description": "this is a good app",
+      "title": "Forgot Password",
+      "description": "ChatbotHub offers a user-friendly online chat interface for intelligent conversations.",
       "h1": "Forgot Password",
       "email_placeholder": "Email",
       "btn": "Send Password Reset"
     },
     "email_verifications": {
       "entry": "Email Verifications",
-      "title": "a good app",
-      "description": "this is a good app",
+      "title": "Email Verifications",
+      "description": "ChatbotHub offers a user-friendly online chat interface for intelligent conversations.",
       "h1_account_confirm": "Account Verifications",
       "h1_reset_password": "Reset Password",
       "p_account_confirm": "Please check your email to confirm your account.",
@@ -129,27 +129,27 @@
     "credit": "credit",
     "payment_history": {
       "entry": "Payment History",
-      "title": "a good app",
-      "description": "this is a good app",
+      "title": "Payment History",
+      "description": "ChatbotHub offers a user-friendly online chat interface for intelligent conversations.",
       "h1": "Payment History",
       "loading": "Loading...",
       "total_label": "Total:"
     }
   },
   "need_credit_modal": {
-    "title": "alter",
+    "title": "Tip",
     "content": "You don't has enough credit!",
     "pay_btn": "Charge"
   },
   "usage": {
     "entry": "Usage",
-    "title": "a good app",
-    "description": "this is a good app"
+    "title": "Usage",
+    "description": "ChatbotHub offers a user-friendly online chat interface for intelligent conversations."
   },
   "settings": {
     "entry": "Settings",
-    "title": "a good app",
-    "description": "this is a good app"
+    "title": "Settings",
+    "description": "ChatbotHub offers a user-friendly online chat interface for intelligent conversations."
   },
   "slug": {
     "page_not_found": "Page not found"
